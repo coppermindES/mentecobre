@@ -3,38 +3,24 @@ html, body, #root {
   padding: 0;
   min-height: 100%;
   font-family: Inter, system-ui, sans-serif;
-  background: #f7fafc;
-  color: #1a202c;
+  background: #F5F0E8;
+  color: #2B2825;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  background: #F5F0E8;
+}
+
+#root {
   min-height: 100vh;
 }
 
-.app {
-  width: min(900px, 100%);
-  padding: 2rem;
-}
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  font-family: Inter, system-ui, sans-serif;
-  background: #f7fafc;
-  color: #1a202c;
+* {
+  box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.app {
-  width: min(900px, 100%);
-  padding: 2rem;
+a {
+  color: inherit;
+  text-decoration: none;
 }
