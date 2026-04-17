@@ -1,3 +1,4 @@
+from django.db import transaction
 from rest_framework import serializers
 from universe.models import Universe
 from users.models import User, UserStatusLog
@@ -21,8 +22,26 @@ class UserSerializer(serializers.ModelSerializer):
             "universe",
             "notes",
             "status",
+            "status_changed_at",
         ]
-        read_only_fields = ["id"]
+        read_only_fields = ["id", "status_changed_at"]
+
+    def update(self, instance, validated_data):
+        previous_status = instance.status
+        new_status = validated_data.get("status", previous_status)
+        changed_by = self.context["request"].user
+
+        with transaction.atomic():
+            instance = super().update(instance, validated_data)
+
+            if previous_status != new_status:
+                UserStatusLog.objects.create(
+                    user=instance,
+                    status=new_status,
+                    changed_by=changed_by,
+                )
+
+        return instance
 
 
 class UserStatusLogSerializer(serializers.ModelSerializer):

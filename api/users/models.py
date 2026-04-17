@@ -24,6 +24,11 @@ class User(AbstractUser):
         default=UserStatus.ACTIVE,
     )
 
+    @property
+    def status_changed_at(self):
+        latest_log = self.status_logs.filter(status=self.status).order_by("-changed_at").first()
+        return latest_log.changed_at if latest_log else None
+
     def __str__(self):
         return self.username
 
