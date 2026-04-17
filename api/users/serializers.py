@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from universe.models import Universe
 from users.models import User, UserStatusLog
 

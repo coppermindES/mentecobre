@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from universe.models import Universe
 
 
@@ -8,4 +7,4 @@ class UniverseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Universe
-        fields = ['id', 'name']
+        fields = ["id", "name"]

@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
@@ -25,9 +24,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "universe",
-                    models.CharField(
-                        max_length=50, unique=True, verbose_name="universo"
-                    ),
+                    models.CharField(max_length=50, unique=True, verbose_name="universo"),
                 ),
             ],
             options={
