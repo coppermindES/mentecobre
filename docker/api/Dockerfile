@@ -24,9 +24,13 @@ COPY api/README.md api/README.md
 RUN uv sync --project api --frozen
 
 COPY api /app/api
+COPY docker/api/entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
 
 WORKDIR /app/api
 
 EXPOSE 8000
 
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["uv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]

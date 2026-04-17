@@ -9,8 +9,45 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import environ
 from pathlib import Path
+
+env = environ.Env(
+    CORS_ALLOW_CREDENTIALS=(bool, False),
+    CORS_ALLOW_METHODS=(list, ['GET', 'OPTIONS']),
+    CORS_ALLOWED_ORIGINS=(
+        list,
+        ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://0.0.0.0:5173'],
+    ),
+    CSRF_TRUSTED_ORIGINS=(
+        list,
+        ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://0.0.0.0:5173'],
+    ),
+    DJANGO_DEBUG=(bool, False),
+    DJANGO_SECRET_KEY=(
+        str,
+        'django-insecure-lxb!or)no^y_w8gx4wg#bk*mw&lk$hei!rhok+0&=tojo7!d!%',
+    ),
+    DJANGO_ALLOWED_HOSTS=(list, ['127.0.0.1', 'localhost']),
+    DJANGO_STATIC_URL=(str, '/static/'),
+    DJANGO_STATIC_ROOT=(str, '/tmp/static/'),
+    DJANGO_MEDIA_URL=(str, '/media/'),
+    DJANGO_MEDIA_ROOT=(str, '/tmp/media/'),
+    POSTGRES_DB=(str, 'mentecobre_db'),
+    POSTGRES_USER=(str, 'postgres'),
+    POSTGRES_PASSWORD=(str, 'postgres'),
+    POSTGRES_HOST=(str, 'api-web-1'),
+    POSTGRES_PORT=(str, '5432'),
+    DEFAULT_AUTHENTICATION_CLASSES=(
+        tuple,
+        ('rest_framework.authentication.SessionAuthentication',),
+    ),
+    DEFAULT_PAGINATION_CLASS=(str, 'rest_framework.pagination.PageNumberPagination'),
+    MAX_PAGE_SIZE=(int, 500),
+    PAGE_SIZE=(int, 20),
+    PAGE_SIZE_QUERY_PARAM=(str, 'page_size'),
+)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,13 +56,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-s#e%*sr)m(=9+uv77#v5aey-rn89@^3d6!s5^wc-kidg3cag4!"
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS')
 
 
 # Application definition
@@ -37,14 +73,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "rest_framework",
+    "drf_spectacular",
+    "django_extensions",
     "universe",
     "users",
     "authentication",
     "mentecobre"
 ]
-
-AUTH_USER_MODEL = "users.User"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -78,11 +115,14 @@ WSGI_APPLICATION = "main.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT'),
     }
 }
 
@@ -105,6 +145,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.User'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
@@ -121,7 +163,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = env('DJANGO_STATIC_URL')
+STATIC_ROOT = env('DJANGO_STATIC_ROOT')
+MEDIA_URL = env('DJANGO_MEDIA_URL')
+MEDIA_ROOT = env('DJANGO_MEDIA_ROOT')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -130,6 +175,100 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 REST_FRAMEWORK = {
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 20,
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+    ],
+    'DEFAULT_PAGINATION_CLASS': env('DEFAULT_PAGINATION_CLASS'),
+    'PAGE_SIZE': env('PAGE_SIZE'),
+    'PAGE_SIZE_QUERY_PARAM': env('PAGE_SIZE_QUERY_PARAM'),
+    'MAX_PAGE_SIZE': env('MAX_PAGE_SIZE'),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': env('DEFAULT_AUTHENTICATION_CLASSES'),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'COERCE_DECIMAL_TO_STRING': False,
+}
+
+
+
+# Swagger
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Mentecobre API',
+    'DESCRIPTION': "Este proyecto implementa la Mentecobre API.",
+    'VERSION': '1.0.0',
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SERVE_INCLUDE_SCHEMA': False,
+    'OAS_VERSION': '3.1.0',
+    # OTHER SETTINGS
+    'SWAGGER_UI_SETTINGS': {
+        'displayRequestDuration': True,
+        # other swagger settings
+    }
+}
+
+# Application definitions
+APP_VERSION = '1.0.0'
+APP_NAME = 'Mentecobre API'
+
+# Cross-Origin Resource Sharing (CORS) settings
+CORS_ALLOW_CREDENTIALS = env('CORS_ALLOW_CREDENTIALS')
+CORS_ALLOW_METHODS = env('CORS_ALLOW_METHODS')
+CORS_ALLOWED_ORIGINS = env('CORS_ALLOWED_ORIGINS')
+
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'authentication': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'mentecobre': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'notifications': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'users': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'universe': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
 }
