@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 import environ
@@ -42,12 +43,14 @@ env = environ.Env(
     POSTGRES_PORT=(str, "5432"),
     DEFAULT_AUTHENTICATION_CLASSES=(
         tuple,
-        ("rest_framework.authentication.SessionAuthentication",),
+        ("rest_framework_simplejwt.authentication.JWTAuthentication",),
     ),
     DEFAULT_PAGINATION_CLASS=(str, "rest_framework.pagination.PageNumberPagination"),
     MAX_PAGE_SIZE=(int, 500),
     PAGE_SIZE=(int, 20),
     PAGE_SIZE_QUERY_PARAM=(str, "page_size"),
+    JWT_ACCESS_TOKEN_LIFETIME_MINUTES=(int, 15),
+    JWT_REFRESH_TOKEN_LIFETIME_DAYS=(int, 7),
 )
 
 
@@ -87,6 +90,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -272,4 +276,11 @@ LOGGING = {
             "propagate": True,
         },
     },
+}
+
+# SimpleJWT
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=env("JWT_ACCESS_TOKEN_LIFETIME_MINUTES")),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=env("JWT_REFRESH_TOKEN_LIFETIME_DAYS")),
+    "ROTATE_REFRESH_TOKENS": True,
 }
