@@ -39,7 +39,7 @@ env = environ.Env(
     POSTGRES_DB=(str, "mentecobre_db"),
     POSTGRES_USER=(str, "postgres"),
     POSTGRES_PASSWORD=(str, "postgres"),
-    POSTGRES_HOST=(str, "api-web-1"),
+    POSTGRES_HOST=(str, "localhost"),
     POSTGRES_PORT=(str, "5432"),
     DEFAULT_AUTHENTICATION_CLASSES=(
         tuple,
@@ -51,6 +51,8 @@ env = environ.Env(
     PAGE_SIZE_QUERY_PARAM=(str, "page_size"),
     JWT_ACCESS_TOKEN_LIFETIME_MINUTES=(int, 15),
     JWT_REFRESH_TOKEN_LIFETIME_DAYS=(int, 7),
+    COPPERMIND_NAMESPACES=(list, [0, 4, 8, 10, 14, 3000]),
+    COPPERMIND_USER_AGENT=(str, None),
 )
 
 
@@ -85,6 +87,7 @@ INSTALLED_APPS = [
     "universe",
     "users",
     "authentication",
+    "coppermind",
     "mentecobre",
 ]
 
@@ -284,3 +287,8 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=env("JWT_REFRESH_TOKEN_LIFETIME_DAYS")),
     "ROTATE_REFRESH_TOKENS": True,
 }
+
+
+# Coppermind Config
+COPPERMIND_NAMESPACES = env("COPPERMIND_NAMESPACES")
+COPPERMIND_USER_AGENT = env("COPPERMIND_USER_AGENT")

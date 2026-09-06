@@ -5,4 +5,6 @@ app_name = "api_v1"
 urlpatterns = [
     path("", include("universe.urls")),
     path("", include("users.urls")),
+    path("", include("mentecobre.urls")),
+    path("", include("coppermind.urls")),
 ]
