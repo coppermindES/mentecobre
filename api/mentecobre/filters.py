@@ -23,10 +23,10 @@ class ArticleFilter(FilterSet):
     type = MultipleChoiceFilter(choices=Article.Type.choices)
     priority = MultipleChoiceFilter(choices=Article.Priority.choices)
 
-    translator = MultipleChoiceFilter(field_name="translator__id", choices=User.objects.all())
-    reviewer = MultipleChoiceFilter(field_name="reviewer__id", choices=User.objects.all())
-    gregorio = MultipleChoiceFilter(field_name="gregorio__id", choices=User.objects.all())
-    universe = MultipleChoiceFilter(field_name="universe__id", choices=Universe.objects.all())
+    translator = MultipleChoiceFilter(field_name="translator__id", choices=User.objects.values_list("id", "username"))
+    reviewer = MultipleChoiceFilter(field_name="reviewer_id", choices=User.objects.values_list("id", "username"))
+    gregorio = MultipleChoiceFilter(field_name="gregorio_id", choices=User.objects.values_list("id", "username"))
+    universe = MultipleChoiceFilter(field_name="universe__id", choices=Universe.objects.values_list("id", "universe"))
 
     # Yes or No filters
     linked_copper_en = BooleanFilter()

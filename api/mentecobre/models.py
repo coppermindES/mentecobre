@@ -171,7 +171,7 @@ class Article(TimeStampedModel):
         verbose_name_plural = "Artículos"
         constraints = [
             models.CheckConstraint(
-                check=(models.Q(page_en__isnull=False) | models.Q(page_es__isnull=False)),
+                condition=(models.Q(page_en__isnull=False) | models.Q(page_es__isnull=False)),
                 name="article_must_have_at_least_one_page",
             )
         ]
