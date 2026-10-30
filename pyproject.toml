@@ -1,0 +1,30 @@
+[project]
+name = "mentecobre"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "api",
+]
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.13.10",
+    "pre-commit>=4.5.1",
+    "ruff>=0.15.11",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_provider = "pep621"
+tag_format = "v$version"
