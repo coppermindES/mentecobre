@@ -8,8 +8,8 @@ This is a **multi-context** repo. Read the glossary for the context you are work
 
 | Context | Path | What it is |
 | ------- | ---- | ---------- |
-| `api`   | `api/` | Django backend. Apps: `authentication`, `coppermind`, `common`, `main` |
-| `spa`   | `spa/` | Vite + React frontend |
+| `api`   | `api/` | Django backend. Apps: `authentication`, `common`, `coppermind`, `main`, `mentecobre`, `notifications`, `universe`, `users` |
+| `spa`   | `spa/` | Vite + React frontend (scaffold only so far) |
 
 `docker/` holds deployment plumbing for both contexts. It is not a context of its
 own: decisions about it belong in the root `docs/adr/`.
