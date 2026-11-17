@@ -6,7 +6,8 @@ Issues and specs for this repo live as GitHub issues in `coppermindES/mentecobre
 issues by hand in the GitHub web UI, then invokes a skill to read them and plan.
 Implementation is done by hand too.
 
-Use the `gh` CLI for reads.
+Use the `gh` CLI for reads. `gh auth login` must have been run once on this
+machine, or every read command below fails.
 
 ## Conventions
 
@@ -28,6 +29,6 @@ Read it as in **Read an issue** above.
 
 ## Triage
 
-No triage workflow is configured: the `triage` skill is not installed and no
-label vocabulary has been agreed. Skills should not apply labels. If a skill
-wants to classify work, describe the classification in prose instead.
+No triage workflow is configured for this repo and no label vocabulary is in
+use. Skills should not apply labels. If a skill wants to classify work, describe
+the classification in prose instead.
