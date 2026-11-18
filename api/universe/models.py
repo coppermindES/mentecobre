@@ -4,12 +4,12 @@ from django.db.models.functions import Lower
 
 # Create your models here.
 class Universe(models.Model):
-    universe = models.CharField(
+    name = models.CharField(
         max_length=50, null=False, blank=False, verbose_name="universo", unique=True
     )
 
     def __str__(self):
-        return str(self.universe)
+        return str(self.name)
 
     class Meta:
         verbose_name = "Universo"
@@ -17,7 +17,7 @@ class Universe(models.Model):
 
         constraints = [
             models.UniqueConstraint(
-                Lower("universe"),
-                name="universe_unique",
+                Lower("name"),
+                name="name_unique",
             ),
         ]

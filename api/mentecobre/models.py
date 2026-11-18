@@ -1,8 +1,10 @@
 from coppermind.models import Page, Wiki
 from django.conf import settings
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 from django_extensions.db.models import TimeStampedModel
+from users.models import RoleEnum
 
 
 class Article(TimeStampedModel):
@@ -93,7 +95,6 @@ class Article(TimeStampedModel):
         null=True,
         blank=True,
         related_name="translations",
-        limit_choices_to={"groups__name": "Translators"},
         verbose_name="Traductor",
     )
     assigned_date = models.DateField(
@@ -112,7 +113,7 @@ class Article(TimeStampedModel):
         null=True,
         blank=True,
         related_name="reviews",
-        limit_choices_to={"groups__name": "Reviewers"},
+        limit_choices_to=Q(role__key__in=[RoleEnum.REVIEWER.value, RoleEnum.ADMIN.value]),
         verbose_name="Revisor",
     )
     reviewer_assigned_date = models.DateField(
@@ -131,7 +132,7 @@ class Article(TimeStampedModel):
         null=True,
         blank=True,
         related_name="engregoriados",
-        limit_choices_to={"groups__name": "Admins"},
+        limit_choices_to=Q(role__key=RoleEnum.ADMIN.value),
         verbose_name="Gregorio",
     )
     gregorio_assigned_date = models.DateField(
@@ -186,8 +187,8 @@ class Article(TimeStampedModel):
         Status.TRANSLATING: {Status.TRANSLATED, Status.UNTRANSLATED},
         Status.TRANSLATED: {Status.REVIEWING, Status.TRANSLATING},
         Status.REVIEWING: {Status.REVIEWED, Status.TRANSLATED},
-        Status.REVIEWED: {Status.REVIEWING},
-        Status.GREGORING: {Status.REVIEWED, Status.GREGORING},
+        Status.REVIEWED: {Status.REVIEWING, Status.GREGORING},
+        Status.GREGORING: {Status.GREGORIADO, Status.REVIEWED},
         Status.GREGORIADO: {Status.GREGORING},
     }
 

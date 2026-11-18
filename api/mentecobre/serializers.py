@@ -1,23 +1,23 @@
-from coppermind.models import Page, Wiki
+from django.contrib.auth import get_user_model
 from mentecobre.models import Article
 from rest_framework import serializers
+from users.models import RoleEnum
+
+User = get_user_model()
+
+def users_with_role(key):
+    return User.objects.filter(role__key=key)
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-    page_en_page_id = serializers.SlugRelatedField(
-        source="page_en",
-        slug_field="page_id",
-        queryset=Page.objects.filter(wiki=Wiki.EN),
-        required=False,
-        allow_null=True,
+    page_en_page_id = serializers.IntegerField(
+        source="page_en.id",
+        read_only=True,
     )
 
-    page_es_page_id = serializers.SlugRelatedField(
-        source="page_es",
-        slug_field="page_id",
-        queryset=Page.objects.filter(wiki=Wiki.ES),
-        required=False,
-        allow_null=True,
+    page_es_page_id = serializers.IntegerField(
+        source="page_es.id",
+        read_only=True,
     )
 
     page_en_title = serializers.CharField(
@@ -37,19 +37,16 @@ class ArticleSerializer(serializers.ModelSerializer):
         read_only=True,
     )
 
-    type_display = serializers.CharField(
+    type = serializers.CharField(
         source="get_type_display",
-        read_only=True,
     )
 
-    priority_display = serializers.CharField(
+    priority = serializers.CharField(
         source="get_priority_display",
-        read_only=True,
     )
 
-    status_display = serializers.CharField(
+    status = serializers.CharField(
         source="get_status_display",
-        read_only=True,
     )
 
     universe_name = serializers.CharField(
@@ -57,19 +54,23 @@ class ArticleSerializer(serializers.ModelSerializer):
         read_only=True,
     )
 
-    translator_username = serializers.CharField(
-        source="translator.username",
-        read_only=True,
+    translator = serializers.SlugRelatedField(
+        slug_field="username",
+        queryset=User.objects.all(),
+        required=False,
+        allow_null=True,
     )
-
-    reviewer_username = serializers.CharField(
-        source="reviewer.username",
-        read_only=True,
+    reviewer = serializers.SlugRelatedField(
+        slug_field="username",
+        queryset=User.objects.filter(role__key__in=[RoleEnum.REVIEWER.value, RoleEnum.ADMIN.value]),
+        required=False,
+        allow_null=True,
     )
-
-    gregorio_username = serializers.CharField(
-        source="gregorio.username",
-        read_only=True,
+    gregorio = serializers.SlugRelatedField(
+        slug_field="username",
+        queryset=User.objects.filter(role__key=RoleEnum.ADMIN.value),
+        required=False,
+        allow_null=True,
     )
 
     class Meta:
@@ -87,27 +88,20 @@ class ArticleSerializer(serializers.ModelSerializer):
             "page_es_url",
             # Classification
             "type",
-            "type_display",
             "priority",
-            "priority_display",
-            "universe",
             "universe_name",
             # Workflow
             "status",
-            "status_display",
             # Translator
             "translator",
-            "translator_username",
             "assigned_date",
             "translated_at",
             # Reviewer
             "reviewer",
-            "reviewer_username",
             "reviewer_assigned_date",
             "reviewed_at",
             # Gregorio
             "gregorio",
-            "gregorio_username",
             "gregorio_assigned_date",
             "gregorio_at",
             # metadata

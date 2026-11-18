@@ -1,11 +1,12 @@
-from common.permissions import CanEditAdmin
+from common.permissions import IsAdmin
 from coppermind.manager import CoppermindManager
 from coppermind.models import Page
 from coppermind.serializers import PageSerializer, UpdatePagesSerializer
+from django.conf import settings
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.decorators import action
-from rest_framework.exceptions import NotFound
+from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
@@ -15,16 +16,16 @@ class CoppermindViewSet(ModelViewSet):
 
     queryset = Page.objects.all()
     serializer_class = PageSerializer
-    permission_classes = [CanEditAdmin]
+    permission_classes = [IsAdmin]
 
     @extend_schema(request=UpdatePagesSerializer, responses={200: "Éxito"}, summary="Lanza la actualización de páginas")
     @action(detail=False, methods=["post"], url_path="update_pages")
     def update_pages(self, request):
-        language = request.data["language"]
-        namespaces = request.data["namespaces"]
+        language = request.data.get("language")
+        namespaces = request.data.get("namespaces", settings.COPPERMIND_NAMESPACES)
 
         if not language:
-            raise ValueError("No hay idioma seleccionado")
+            raise ValidationError({"language": "No hay idioma seleccionado"})
 
         manager = self.MANAGER
         result = manager.update_pages(language, namespaces)

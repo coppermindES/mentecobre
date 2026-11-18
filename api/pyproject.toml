@@ -10,7 +10,6 @@ dependencies = [
     "django-environ==0.13.0",
     "django-extensions==4.0",
     "django-filter==25.2",
-    "django-environ>=0.13.0",
     "djangorestframework>=3.18.0",
     "djangorestframework-simplejwt>=5.5.1",
     "drf-spectacular==0.30.0",
@@ -19,3 +18,16 @@ dependencies = [
     "pyjwt>=2.10",
     "requests>=2.34.2",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-django>=4.14.0",
+    "pytest-subtests>=0.15.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "main.settings"
+addopts ="-sv --disable-pytest-warnings --migrations"
+nonrecursedirs= "auth_migrations migrations"
+python_files = ["test_*.py", "tests.py", "_tests.py"]

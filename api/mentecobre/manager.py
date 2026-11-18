@@ -173,7 +173,7 @@ class ArticleManager:
 
     @staticmethod
     def _next_to_action(user, status):
-        user_universes = user.universes.all()
+        user_universes = user.universe.all()
         result = []
         with transaction.atomic():
             for universe in user_universes:
@@ -191,10 +191,10 @@ class ArticleManager:
                         {
                             "universe_id": universe.id,
                             "universe_name": universe.name,
-                            "title_en": article.page_en.title,
-                            "title_es": article.page_es.title,
-                            "url_en": article.page_en.full_url,
-                            "url_es": article.page_es.full_url,
+                            "title_en": article.page_en.title if article.page_en else None,
+                            "title_es": article.page_es.title if article.page_es else None,
+                            "url_en": article.page_en.fullurl if article.page_en else None,
+                            "url_es": article.page_es.fullurl if article.page_es else None,
                         }
                     )
 

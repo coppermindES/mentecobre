@@ -7,10 +7,32 @@ from universe.models import Universe
 class UserStatus(models.TextChoices):
     ACTIVE = "activo", "Activo"
     REST = "descanso", "Descanso"
-    INACTIVE = "inactivo", "Inactivo"
+    INACTIVE = "baja", "Baja"
 
+class RoleEnum(models.TextChoices):
+    TRANSLATOR = "translator", "Traductor"
+    REVIEWER = "reviewer", "Revisor"
+    ADMIN = "admin", "Administrador"
+
+
+class Role(models.Model):
+    key = models.CharField(max_length=32, unique=True, choices=RoleEnum.choices)
+
+    @property
+    def name(self):
+        return self.get_key_display()
+
+    def __str__(self):
+        return self.name
 
 class User(AbstractUser):
+    role = models.ForeignKey(
+        Role,
+        on_delete=models.SET_NULL,
+        related_name="users",
+        null=True,
+        blank=True,
+    )
     universe = models.ManyToManyField(
         Universe,
         related_name="user_universe",

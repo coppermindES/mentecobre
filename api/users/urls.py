@@ -5,7 +5,7 @@ app_name = "users"
 
 router = DefaultRouter()
 
-router.register(r"users", UserViewSet, basename="users")
 router.register(r"users/logs", UserStatusLogViewSet, basename="users-logs")
+router.register(r"users", UserViewSet, basename="users")
 
 urlpatterns = router.urls

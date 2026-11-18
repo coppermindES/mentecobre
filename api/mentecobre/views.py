@@ -1,11 +1,22 @@
+from common.permissions import IsAdmin, IsReviewerOrAdmin, IsTranslatorOrAbove
 from mentecobre.filters import ArticleFilter
 from mentecobre.manager import ArticleManager
 from mentecobre.models import Article
 from mentecobre.serializers import ArticleSerializer
 from rest_framework import status
 from rest_framework.decorators import action
+from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+from users.models import RoleEnum
+
+TRANSLATOR_WRITABLE_FIELDS = {
+    "assigned_date",
+    "translator",
+    "translated_at",
+    "notes",
+    "status",
+}
 
 
 class ArticleViewSet(ModelViewSet):
@@ -37,6 +48,48 @@ class ArticleViewSet(ModelViewSet):
         "page_en__title",
         "page_es__title",
     ]
+
+    permission_classes = [IsTranslatorOrAbove]
+
+    def get_permissions(self):
+        if self.action in {
+            "assign_reviewer",
+            "mark_reviewed",
+            "next_to_review",
+            "destroy",
+            "create",
+        }:
+            return [IsReviewerOrAdmin()]
+
+        if self.action in {
+            "assign_gregorio",
+            "mark_engregoriado",
+            "next_to_gregorio",
+        }:
+            return [IsAdmin()]
+
+        return super().get_permissions()
+
+    def get_serializer(self, *args, **kwargs):
+        user = self.request.user
+        user_role = user.role.key if user.is_authenticated and user.role_id else None
+
+        serializer = super().get_serializer(*args, **kwargs)
+        update_actions = {"update", "partial_update"}
+        is_translator_update = (
+            self.action in update_actions
+            and user_role == RoleEnum.TRANSLATOR.value
+            and hasattr(serializer, "initial_data")
+        )
+        if is_translator_update:
+            sent = set(serializer.initial_data or {})
+            forbidden = sent - set(TRANSLATOR_WRITABLE_FIELDS)
+            if forbidden:
+                raise ValidationError(
+                    f"Tu rol no puede actualizar los campos {', '.join(forbidden)}"
+                )
+
+        return serializer
 
     MANAGER = ArticleManager
 

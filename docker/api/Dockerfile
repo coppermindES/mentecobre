@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.11 AS builder
+FROM python:3.13-slim AS builder
 
 # set work directory
 WORKDIR /app

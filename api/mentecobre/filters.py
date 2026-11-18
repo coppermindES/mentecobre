@@ -26,7 +26,7 @@ class ArticleFilter(FilterSet):
     translator = MultipleChoiceFilter(field_name="translator__id", choices=User.objects.values_list("id", "username"))
     reviewer = MultipleChoiceFilter(field_name="reviewer_id", choices=User.objects.values_list("id", "username"))
     gregorio = MultipleChoiceFilter(field_name="gregorio_id", choices=User.objects.values_list("id", "username"))
-    universe = MultipleChoiceFilter(field_name="universe__id", choices=Universe.objects.values_list("id", "universe"))
+    universe = MultipleChoiceFilter(field_name="universe__id", choices=Universe.objects.values_list("id", "name"))
 
     # Yes or No filters
     linked_copper_en = BooleanFilter()
