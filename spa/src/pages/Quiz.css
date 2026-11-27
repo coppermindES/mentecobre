@@ -1,0 +1,300 @@
+.cuiz {
+  display: flex;
+  flex-direction: column;
+}
+
+.cuiz .cuiz-card {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.cuiz-center {
+  text-align: center;
+  max-width: 42rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cuiz-card h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.cuiz-muted {
+  color: var(--on-surface-variant);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cuiz-lead {
+  color: var(--on-surface);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.cviz-switch {
+  position: relative;
+  width: 52px;
+  height: 26px;
+  background-color: #555;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+.cviz-switch.on {
+  background-color: var(--primary);
+}
+
+.cviz-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 18px;
+  width: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.cviz-switch.on .cviz-thumb {
+  transform: translateX(26px);
+}
+
+.cueiz-qheader {
+  display: flex;
+  justify-content: space-between;
+  color: var(--on-surface-variant);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.cueiz-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--surface-container-highest);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.cueiz-progress-bar {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.cueiz-question {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  padding: 1.25rem;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cueiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.cueiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  color: var(--on-surface);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.cueiz-option:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cueiz-option:disabled {
+  cursor: default;
+}
+
+.cueiz-option.correct {
+  background: rgba(46, 204, 113, 0.2);
+  border-color: #2ecc71;
+}
+
+.cueiz-option.incorrect {
+  background: rgba(231, 76, 60, 0.2);
+  border-color: #e74c3c;
+}
+
+.cueiz-marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.cueiz-option.correct .cueiz-marker {
+  border-color: #2ecc71;
+  background: #2ecc71;
+}
+
+.cueiz-option.incorrect .cueiz-marker {
+  border-color: #e74c3c;
+  background: #e74c3c;
+}
+
+.cueiz-option-text {
+  line-height: 1.35;
+}
+
+.cueiz-timer {
+  background: var(--primary);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cueiz-timer-num {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--on-primary-container);
+}
+
+.cueiz-timer-label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 4px;
+  color: var(--on-primary-container);
+}
+
+.cueiz-scorebox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 70px;
+}
+
+.cueiz-points {
+  font-size: 1.5rem;
+  font-weight: 800;
+  min-width: 100px;
+  text-align: center;
+  animation: cuizFadeIn 0.3s ease-in-out;
+}
+
+.cueiz-points.puntos-positivo {
+  color: #2ecc71;
+}
+
+.cueiz-points.puntos-negativo {
+  color: #e74c3c;
+}
+
+.cueiz-score {
+  font-size: 1.05rem;
+  color: var(--on-surface);
+}
+
+@keyframes cuizFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cueiz-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 1.25rem auto 1.5rem;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--on-surface);
+}
+
+.cueiz-table th,
+.cueiz-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--primary);
+  font-size: 0.95rem;
+}
+
+.cueiz-table th {
+  background: var(--primary);
+  color: var(--on-primary-container);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.cueiz-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .cuiz .cuiz-card {
+    padding: 1.25rem;
+  }
+
+  .cueiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .cueiz-question {
+    font-size: 1rem;
+    min-height: 80px;
+  }
+
+  .cueiz-timer {
+    width: 84px;
+    height: 84px;
+  }
+
+  .cueiz-timer-num {
+    font-size: 1.9rem;
+  }
+
+}

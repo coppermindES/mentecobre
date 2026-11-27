@@ -1,0 +1,886 @@
+openapi: 3.1.0
+info:
+  title: API Mentecobre
+  version: 0.2.0
+  description: |
+    Contrato de lo que necesita el front de Mentecobre. La base de datos nueva y
+    el backend (Django REST + SimpleJWT) deben responder con estas formas y estos
+    endpoints. El front funciona en "modo mock" (sin VITE_API_URL) usando semillas
+    JSON con EXACTAMENTE estas formas, de modo que al conectar la API real solo se
+    define VITE_API_URL y la implementación de la capa de servicios.
+
+    Recursos con CRUD genérico: users, universes, articles, glossary, categories,
+    images-with-text, erratas, recruitment, monthly-changes, notifications.
+
+    Convenciones:
+      - Listados devuelven un array (o { results: [...] } si se pagina).
+      - Filtros por query params con nombres de campo.
+      - Los ids son enteros.
+      - Las fechas son `YYYY-MM-DD` (o ISO 8601 completo cuando lleve hora).
+servers:
+  - url: http://localhost:8000
+    description: Backend de desarrollo
+security:
+  - bearerAuth: []
+paths:
+  /api/auth/login/:
+    post:
+      tags: [auth]
+      summary: Iniciar sesión (JWT)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Tokens JWT
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tokens'
+        '401':
+          description: Usuario o contraseña incorrectos
+  /api/auth/refresh/:
+    post:
+      tags: [auth]
+      summary: Renovar el access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refresh]
+              properties:
+                refresh:
+                  type: string
+      responses:
+        '200':
+          description: Nuevo access token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access:
+                    type: string
+
+  /api/v1/users/me/:
+    get:
+      tags: [users]
+      summary: Usuario de la sesión
+      responses:
+        '200':
+          description: Usuario actual
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Token no válido
+
+  /api/v1/users/:
+    get:
+      tags: [users]
+      summary: Listar usuarios (admin)
+      parameters:
+        - in: query
+          name: status
+          schema: { type: string }
+        - in: query
+          name: role
+          schema: { type: string }
+      responses:
+        '200':
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags: [users]
+      summary: Crear usuario (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+      responses:
+        '201':
+          description: Usuario creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/v1/users/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    get:
+      tags: [users]
+      summary: Detalle de usuario (admin)
+      responses:
+        '200':
+          description: Usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    patch:
+      tags: [users]
+      summary: Modificar usuario (admin; p. ej. quitar/poner descanso)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+      responses:
+        '200':
+          description: Usuario modificado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      tags: [users]
+      summary: Dar de baja un usuario (admin)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/universes/:
+    get:
+      tags: [universes]
+      summary: Listar universos
+      responses:
+        '200':
+          description: Lista de universos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Universe'
+    post:
+      tags: [universes]
+      summary: Crear universo (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Universe'
+      responses:
+        '201':
+          description: Universo creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Universe'
+  /api/v1/universes/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [universes]
+      summary: Modificar universo (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Universe'
+      responses:
+        '200':
+          description: Universo modificado
+    delete:
+      tags: [universes]
+      summary: Borrar universo (admin)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/articles/:
+    get:
+      tags: [articles]
+      summary: Listar artículos
+      description: Filtros por query params (universe, type, status, translated, reviewer, translator, ...).
+      parameters:
+        - in: query
+          name: universe
+          schema: { type: integer }
+        - in: query
+          name: type
+          schema: { type: string }
+        - in: query
+          name: translator
+          schema: { type: integer }
+        - in: query
+          name: reviewer
+          schema: { type: integer }
+        - in: query
+          name: translated
+          schema: { type: boolean }
+        - in: query
+          name: reviewed
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Lista de artículos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
+    post:
+      tags: [articles]
+      summary: Crear artículo (admin/revisor)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '201':
+          description: Artículo creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+  /api/v1/articles/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    get:
+      tags: [articles]
+      summary: Detalle de artículo
+      responses:
+        '200':
+          description: Artículo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+    patch:
+      tags: [articles]
+      summary: Modificar artículo (admin/revisor)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '200':
+          description: Artículo modificado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+    delete:
+      tags: [articles]
+      summary: Borrar artículo (admin/revisor)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/glossary/:
+    get:
+      tags: [glossary]
+      summary: Listar términos del glosario
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+      responses:
+        '200':
+          description: Lista de términos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GlossaryEntry'
+    post:
+      tags: [glossary]
+      summary: Crear término (revisor/admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GlossaryEntry'
+      responses:
+        '201':
+          description: Término creado
+  /api/v1/glossary/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [glossary]
+      summary: Modificar término (revisor/admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GlossaryEntry'
+      responses:
+        '200':
+          description: Término modificado
+    delete:
+      tags: [glossary]
+      summary: Borrar término (revisor/admin)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/categories/:
+    get:
+      tags: [categories]
+      summary: Listar categorías del glosario
+      responses:
+        '200':
+          description: Lista de categorías
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+    post:
+      tags: [categories]
+      summary: Crear categoría (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '201':
+          description: Categoría creada
+  /api/v1/categories/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [categories]
+      summary: Modificar categoría (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: Categoría modificada
+    delete:
+      tags: [categories]
+      summary: Borrar categoría (admin)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/images-with-text/:
+    get:
+      tags: [images]
+      summary: Listar imágenes con texto
+      parameters:
+        - in: query
+          name: pendienteEs
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Lista de imágenes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImageWithText'
+    post:
+      tags: [images]
+      summary: Crear imagen (revisor/admin; también el formulario de Traducción crea la entrada EN con pendienteEs)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageWithText'
+      responses:
+        '201':
+          description: Imagen creada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageWithText'
+  /api/v1/images-with-text/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [images]
+      summary: Modificar imagen (revisor/admin; completar el lado ES resuelve la notificación vinculada)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageWithText'
+      responses:
+        '200':
+          description: Imagen modificada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageWithText'
+    delete:
+      tags: [images]
+      summary: Borrar imagen (revisor/admin)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/erratas/:
+    get:
+      tags: [erratas]
+      summary: Listar erratas (admin; filtro por estado)
+      parameters:
+        - in: query
+          name: estado
+          schema: { type: string, enum: [nuevo, en_proceso, resuelto] }
+      responses:
+        '200':
+          description: Lista de erratas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Errata'
+    post:
+      tags: [erratas]
+      summary: Enviar una errata (público, desde el formulario de la web)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Errata'
+      responses:
+        '201':
+          description: Errata registrada
+  /api/v1/erratas/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [erratas]
+      summary: Cambiar estado de una errata (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Errata'
+      responses:
+        '200':
+          description: Errata actualizada
+
+  /api/v1/recruitment/:
+    get:
+      tags: [recruitment]
+      summary: Listar solicitudes (admin; filtro por estado)
+      parameters:
+        - in: query
+          name: estado
+          schema: { type: string, enum: [nuevo, en_proceso, aceptado, rechazado] }
+      responses:
+        '200':
+          description: Lista de solicitudes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recruitment'
+    post:
+      tags: [recruitment]
+      summary: Enviar solicitud de unión al equipo (público, desde la web)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recruitment'
+      responses:
+        '201':
+          description: Solicitud registrada
+  /api/v1/recruitment/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [recruitment]
+      summary: Cambiar estado de una solicitud (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recruitment'
+      responses:
+        '200':
+          description: Solicitud actualizada
+
+  /api/v1/monthly-changes/:
+    get:
+      tags: [monthly]
+      summary: Listar cambios mensuales (revisor/admin/traductor)
+      description: |
+        Cambios que un artículo EN recibió durante un mes. El front clasifica cada
+        registro por el tipo de trabajo a hacer en el artículo ES, salvo HTUP que
+        lo señala la propia API:
+          - tipo 'htup': la API marca que algo no cuadra (ID inexistente, enlace roto).
+          - crear: el articleId no existe en la tabla de artículos (página aún no
+            guardada). `tituloEn` trae el título para crear la página en ES.
+          - sin_traducir: el artículo existe pero no está traducido.
+          - traducido: el artículo está traducido; revisar edición a edición los
+            cambios desde `mesInicio`. Si `cambiosGrandes` = true el trabajo se
+            trata aparte (lista "Cambios grandes").
+        `revisarDesde` marca desde qué fecha hay que revisar (para atrasados de
+        meses anteriores), `hecho` = true indica que el trabajo está terminado y
+        deja de salir en las listas de pendientes. Es editable por el usuario.
+      parameters:
+        - in: query
+          name: mes
+          schema: { type: string, examples: ['2026-08'] }
+        - in: query
+          name: estado
+          schema: { type: string, enum: [nuevo, en_proceso, hecho] }
+        - in: query
+          name: tipo
+          schema: { type: string, enum: [htup] }
+        - in: query
+          name: hecho
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Lista de cambios mensuales
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MonthlyChange'
+    post:
+      tags: [monthly]
+      summary: Registrar un cambio mensual (revisor/admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonthlyChange'
+      responses:
+        '201':
+          description: Cambio registrado
+  /api/v1/monthly-changes/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    patch:
+      tags: [monthly]
+      summary: Modificar un cambio mensual (revisor/admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonthlyChange'
+      responses:
+        '200':
+          description: Cambio actualizado
+    delete:
+      tags: [monthly]
+      summary: Borrar un cambio mensual (admin)
+      responses:
+        '204':
+          description: Borrado
+
+  /api/v1/notifications/:
+    get:
+      tags: [notifications]
+      summary: Listar notificaciones de la sesión
+      description: |
+        Tipos actuales:
+          - imagen_con_texto: un traductor notificó una imagen con texto (solo el lado
+            EN). Completar el lado ES en images-with-text resuelve la notificación.
+          - sistema: avisos generales (p. ej. errata o solicitud nueva sin revisar).
+        El feed de Notificaciones del panel de administración fusiona este recurso
+        con erratas y solicitudes de reclutamiento (cada uno desde su propio endpoint).
+      parameters:
+        - in: query
+          name: estado
+          schema: { type: string, enum: [pendiente, completado] }
+      responses:
+        '200':
+          description: Lista de notificaciones
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Notification'
+  /api/v1/notifications/{id}/:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    get:
+      tags: [notifications]
+      summary: Detalle de notificación
+      responses:
+        '200':
+          description: Notificación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Notification'
+    patch:
+      tags: [notifications]
+      summary: Marcar leída o completada una notificación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Notification'
+      responses:
+        '200':
+          description: Notificación actualizada
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: object
+      required: [username, password]
+      properties:
+        username: { type: string }
+        password: { type: string }
+    Tokens:
+      type: object
+      properties:
+        access: { type: string }
+        refresh: { type: string }
+
+    User:
+      type: object
+      description: Usuario. `groups` deriva los roles (traductor/revisor/admin); `rol` es el nivel de privilegios (colaborador/admin).
+      properties:
+        id: { type: integer }
+        username: { type: string }
+        first_name: { type: string }
+        last_name: { type: string }
+        email: { type: string }
+        groups:
+          type: array
+          items: { type: string, enum: [traductor, revisor, admin] }
+        rol: { type: string, enum: [colaborador, admin] }
+        universe:
+          type: array
+          description: Ids de los universos del usuario (1 a todos).
+          items: { type: integer }
+        status: { type: string, enum: [activo, descanso, baja, inactivo] }
+        status_changed_at: { type: string, nullable: true }
+        copper_username: { type: string, nullable: true }
+        last_copper_update:
+          type: string
+          nullable: true
+          description: Fecha de la última edición del usuario en la Copper EN; sirve para el control de inactividad.
+        date_joined: { type: string }
+        is_active: { type: boolean }
+        is_staff: { type: boolean }
+        is_resting: { type: boolean }
+        timeoff_date: { type: string, nullable: true }
+        out_date: { type: string, nullable: true }
+        notes: { type: string }
+    UserInput:
+      type: object
+      properties:
+        username: { type: string }
+        first_name: { type: string }
+        last_name: { type: string }
+        email: { type: string }
+        password: { type: string }
+        groups:
+          type: array
+          items: { type: string }
+        rol: { type: string }
+        universe:
+          type: array
+          items: { type: integer }
+        status: { type: string }
+        copper_username: { type: string }
+        notes: { type: string }
+
+    Universe:
+      type: object
+      properties:
+        id: { type: integer }
+        nombre: { type: string }
+
+    Article:
+      type: object
+      description: |
+        Artículo de traducción. `translator`/`reviewer` son ids de usuario.
+        `gregorio`/`engregoriado` = artículo que ha pasado una segunda revisión.
+        `linkcopperen` = se añadió el enlace que une la Coppermind EN con la ES.
+        `type` es el tipo de la página (PJ, RD, LOC, ...) — el front no lo muestra
+        en tarjetas, pero se conserva como dato.
+      properties:
+        id: { type: integer }
+        pageidEn: { type: integer, nullable: true }
+        pageidEs: { type: integer, nullable: true }
+        titleEn: { type: string }
+        titleEs: { type: string }
+        type: { type: string, nullable: true }
+        priority: { type: integer, nullable: true }
+        translator: { type: integer, nullable: true }
+        assignedDate: { type: string, nullable: true }
+        translated: { type: boolean }
+        translatedDate: { type: string, nullable: true }
+        reviewer: { type: integer, nullable: true }
+        reviewed: { type: boolean }
+        reviewerassignedDate: { type: string, nullable: true }
+        reviewedDate: { type: string, nullable: true }
+        gregorio: { type: boolean }
+        engregoriado: { type: boolean }
+        notes: { type: string }
+        universe: { type: integer, nullable: true }
+        urldrive: { type: string }
+        urlEn: { type: string }
+        urlEs: { type: string }
+        linkcopperen: { type: boolean }
+        problemCopper: { type: string }
+
+    GlossaryEntry:
+      type: object
+      properties:
+        id: { type: integer }
+        term: { type: string }
+        es: { type: string }
+        universeId: { type: integer, nullable: true }
+        universo: { type: string, nullable: true }
+        urlEn: { type: string }
+        urlEs: { type: string }
+
+    Category:
+      type: object
+      properties:
+        id: { type: integer }
+        es: { type: string }
+        en: { type: string }
+
+    ImageWithText:
+      type: object
+      description: Imagen que lleva texto en inglés y su versión en español.
+      properties:
+        id: { type: integer }
+        nombre: { type: string }
+        en: { type: string }
+        es: { type: string, nullable: true }
+        urlEn: { type: string }
+        urlEs: { type: string, nullable: true }
+        pendienteEs:
+          type: boolean
+          description: true si solo existe el lado EN (creado desde el formulario de Traducción).
+
+    Errata:
+      type: object
+      properties:
+        id: { type: integer }
+        articulo: { type: string }
+        texto: { type: string }
+        usuario: { type: integer, nullable: true }
+        estado: { type: string, enum: [nuevo, en_proceso, resuelto, descartado] }
+        notas: { type: string, description: Nota interna que añade el equipo de administración. }
+        creado_en: { type: string }
+
+    Recruitment:
+      type: object
+      properties:
+        id: { type: integer }
+        nombre: { type: string }
+        email: { type: string }
+        motivacion: { type: string }
+        estado: { type: string, enum: [nuevo, entrevista, aceptado, rechazado] }
+        notas: { type: string, description: Nota interna que añade el equipo de administración. }
+        creado_en: { type: string }
+
+    MonthlyChange:
+      type: object
+      description: |
+        Cambio mensual de un artículo EN. El front deriva el tipo de trabajo a partir
+        de la existencia del artículo (articleId) y su estado de traducción; la API
+        solo marca `tipo: "htup"` cuando detecta un problema. `tituloEn` se usa para
+        las entradas de tipo crear.
+      properties:
+        id: { type: integer }
+        articleId: { type: integer, nullable: true }
+        tituloEn: { type: string, nullable: true }
+        mesInicio: { type: string }
+        mesFin: { type: string }
+        estado: { type: string, enum: [nuevo, en_proceso, hecho] }
+        tipo: { type: string, enum: [htup], nullable: true }
+        fechaCambioEn: { type: string, nullable: true }
+        revisarDesde: { type: string, nullable: true }
+        hecho: { type: boolean, description: 'Trabajo terminado: deja de salir en las listas de pendientes.' }
+        cambiosGrandes: { type: boolean, description: 'true si la revisión del artículo requiere cambios grandes; se muestra en su lista propia.' }
+
+    Notification:
+      type: object
+      properties:
+        id: { type: integer }
+        tipo: { type: string, enum: [imagen_con_texto, sistema] }
+        enUrl: { type: string, nullable: true }
+        contexto: { type: string, nullable: true }
+        estado: { type: string, enum: [pendiente, completado] }
+        leido: { type: boolean }
+        imageId: { type: integer, nullable: true }
+        creado_en: { type: string }

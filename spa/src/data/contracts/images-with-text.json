@@ -1,0 +1,641 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mapa de Sycla",
+    "en": "Sycla-Opelon Map.jpg",
+    "es": "MapaSycla.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Sycla-Opelon%20Map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaSycla.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 2,
+    "nombre": "Mapa de Arelon",
+    "en": "Arelon Map.jpg",
+    "es": "MapaArelon.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Arelon%20Map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaArelon.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 3,
+    "nombre": "Mapa de Elantris-Kae",
+    "en": "Elantris-Kae_Map.jpg",
+    "es": "MapaElantris-KAE.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Elantris-Kae_Map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaElantris-KAE.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 4,
+    "nombre": "Tabla de metales alománticos",
+    "en": "Table of Allomantic Metals.jpeg",
+    "es": "Tabla-metales-alomanticos.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Table%20of%20Allomantic%20Metals.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Tabla-metales-alomanticos.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 5,
+    "nombre": "Tabla de metales feruquímicos",
+    "en": "Feruchemical table.jpg",
+    "es": "Tabla-metales-feruquimicos.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Feruchemical%20table.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Tabla-metales-feruquimicos.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 6,
+    "nombre": "Tabla de metales hemalúrgicos",
+    "en": "Hemalurgy table.jpg",
+    "es": "Tabla-metales-hemalurgicos.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Hemalurgy%20table.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Tabla-metales-hemalurgicos.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 7,
+    "nombre": "Mapa del Imperio Final",
+    "en": "Final Empire.png",
+    "es": "MapaImperioFinal.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Final%20Empire.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaImperioFinal.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 8,
+    "nombre": "Mapa del Imperio Final (10 aniversario)",
+    "en": "Final Empire Map.jpg",
+    "es": "MapaImperioFinal 10aniversario.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Final%20Empire%20Map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaImperioFinal%2010aniversario.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 9,
+    "nombre": "Plano de Elendel",
+    "en": "Elendel.jpg",
+    "es": "PlanoElendel.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Elendel.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/PlanoElendel.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 10,
+    "nombre": "Mapa de la Cuenca de Elendel",
+    "en": "Elendel Basin.png",
+    "es": "MapaCuencaElendel.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Elendel%20Basin.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaCuencaElendel.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 11,
+    "nombre": "Mapa de Roshar",
+    "en": "OB Roshar.jpg",
+    "es": "MapaRosharColorES.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/OB%20Roshar.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaRosharColorES.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 12,
+    "nombre": "Funcionarios azishianos",
+    "en": "Azish Public Servant Designs.jpeg",
+    "es": "Diseño-Funcionarios-Azishianos.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Azish%20Public%20Servant%20Designs.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Dise%C3%B1o-Funcionarios-Azishianos.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 13,
+    "nombre": "Cenizaspren",
+    "en": "Shallan's Sketchbook - Ashspren.jpg",
+    "es": "Cenizaspren.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Ashspren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Cenizaspren.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 14,
+    "nombre": "Mapa de Makabak oriental",
+    "en": "Map of Eastern Makabak.jpg",
+    "es": "Mapa-Makabak-Oriental.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Map%20of%20Eastern%20Makabak.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Mapa-Makabak-Oriental.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 15,
+    "nombre": "Mapa de Shadesmar",
+    "en": "Shadesmar (TWoK).jpg",
+    "es": "MapaShadesmar.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shadesmar%20(TWoK).jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaShadesmar.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 16,
+    "nombre": "Mapa de Alezkar",
+    "en": "Alethkar Color.jpg",
+    "es": "MapaAlezkar.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Alethkar%20Color.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaAlezkar.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 17,
+    "nombre": "Apuntes sobre cimática de Kabsal",
+    "en": "Four Cities.jpg",
+    "es": "Apuntes-Cimática-Kabsal.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Four%20Cities.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Apuntes-Cim%C3%A1tica-Kabsal.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 18,
+    "nombre": "Glifos alezi (primera y segunda parte)",
+    "en": "Alethi Glyphs Page 1.jpg",
+    "es": "Glifos-Alezi-Primera-Parte.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Alethi%20Glyphs%20Page%201.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Glifos-Alezi-Primera-Parte.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 19,
+    "nombre": "Plano de Kholinar",
+    "en": "Kholinar.jpg",
+    "es": "Plano-Kholinar.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Kholinar.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Plano-Kholinar.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 20,
+    "nombre": "Plano de Ciudad Thaylen",
+    "en": "Thaylen City.jpg",
+    "es": "Plano-Ciudad-Thaylen.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Thaylen%20City.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Plano-Ciudad-Thaylen.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 21,
+    "nombre": "Mapa de las Tierras Heladas",
+    "en": "Frostlands map.jpeg",
+    "es": "Mapa-Tierras-Heladas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Frostlands%20map.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Mapa-Tierras-Heladas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 22,
+    "nombre": "Tatuajes del Puente Cuatro",
+    "en": "Bridge Four tattoos page.jpeg",
+    "es": "Tatuajes-Puente-Cuatro.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Bridge%20Four%20tattoos%20page.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Tatuajes-Puente-Cuatro.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 23,
+    "nombre": "Vinos de Roshar",
+    "en": "Rosharan Wines.jpg",
+    "es": "VinosdeRoshar.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Rosharan%20Wines.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/VinosdeRoshar.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 24,
+    "nombre": "Vinospren",
+    "en": "alespren.jpg",
+    "es": "vinospren.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/alespren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/vinospren.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 25,
+    "nombre": "Escaleras de Nohadon",
+    "en": "Nohadons Stairways Sea of Souls map crop.png",
+    "es": "Escaleras-nohadon-recorte-mar-almas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Nohadons%20Stairways%20Sea%20of%20Souls%20map%20crop.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Escaleras-nohadon-recorte-mar-almas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 26,
+    "nombre": "Mapa del Mar de las Luces Perdidas",
+    "en": "Sea of Lost Lights.jpg",
+    "es": "MarLucesPerdidas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Sea%20of%20Lost%20Lights.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MarLucesPerdidas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 27,
+    "nombre": "Cuaderno de bocetos de Shallan: Patrón",
+    "en": "Pattern.jpeg",
+    "es": "BocetosShallan-Patron.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Pattern.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/BocetosShallan-Patron.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 28,
+    "nombre": "Batalla de la Torre",
+    "en": "Battle of the Tower.jpg",
+    "es": "BatallaTorre.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Battle%20of%20the%20Tower.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/BatallaTorre.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 29,
+    "nombre": "Mapa de las Llanuras Quebradas",
+    "en": "Shattered Plains.jpg",
+    "es": "MapaLlanurasQuebradas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shattered%20Plains.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaLlanurasQuebradas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 30,
+    "nombre": "Pergamino de Posiciones",
+    "en": "Scroll of Stances.jpeg",
+    "es": "PergaminoPosiciones.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Scroll%20of%20Stances.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/PergaminoPosiciones.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 31,
+    "nombre": "Representación de la forma",
+    "en": "Shattered_Plains_WoR_map.jpeg",
+    "es": "RepresentacionLlanurasQuebradas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shattered_Plains_WoR_map.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/RepresentacionLlanurasQuebradas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 32,
+    "nombre": "Mapa del Mar de las Almas",
+    "en": "Sea of Souls.jpg",
+    "es": "MarAlmas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Sea%20of%20Souls.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MarAlmas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 33,
+    "nombre": "Rocabrotes",
+    "en": "Rockbuds.jpg",
+    "es": "Rocabrote.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Rockbuds.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Rocabrote.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 34,
+    "nombre": "Ciclo vital del chull",
+    "en": "Chull Life Cycle.jpeg",
+    "es": "Ciclo-vital-chull.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Chull%20Life%20Cycle.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Ciclo-vital-chull.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 35,
+    "nombre": "Lait",
+    "en": "Lait.jpeg",
+    "es": "Lait-Esp.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Lait.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Lait-Esp.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 36,
+    "nombre": "Posiciones de las Puertas Juradas",
+    "en": "Oathgate Locations.jpg",
+    "es": "Puertas-Juradas-Localizacion.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Oathgate%20Locations.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Puertas-Juradas-Localizacion.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 37,
+    "nombre": "Armaduras esquirladas",
+    "en": "Shardplate.jpeg",
+    "es": "Armadura-esquirlada.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shardplate.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Armadura-esquirlada.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 38,
+    "nombre": "La historia del hombre",
+    "en": "The History of Man.jpg",
+    "es": "La-historia-del-hombre.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/The%20History%20of%20Man.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/La-historia-del-hombre.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 39,
+    "nombre": "Spren de Kholinar",
+    "en": "Kholinar Spren.jpg",
+    "es": "Spren-de-Kholinar-.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Kholinar%20Spren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Spren-de-Kholinar-.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 40,
+    "nombre": "Mapa de los Reinos Plateados",
+    "en": "Silver Kingdoms.jpg",
+    "es": "ReinosPlateados.JPG",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Silver%20Kingdoms.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/ReinosPlateados.JPG",
+    "pendienteEs": false
+  },
+  {
+    "id": 41,
+    "nombre": "Altospren",
+    "en": "Shallan's Sketchbook - Highspren.jpg",
+    "es": "Altospren.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Highspren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Altospren.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 42,
+    "nombre": "Anguilas aéreas",
+    "en": "Skyeel.jpg",
+    "es": "Anguilas-aereas.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Skyeel.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Anguilas-aereas.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 43,
+    "nombre": "Spren de Shadesmar",
+    "en": "Shadesmar_Spren.jpg",
+    "es": "Spren-de-shadesmar.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shadesmar_Spren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Spren-de-shadesmar.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 44,
+    "nombre": "Abismoide",
+    "en": "Chasmfiend.jpeg",
+    "es": "Abismoide.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Chasmfiend.jpeg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Abismoide.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 45,
+    "nombre": "Crípticos",
+    "en": "Shallan's Sketchbook - Cryptics.jpg",
+    "es": "Cripticos.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Cryptics.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Cripticos.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 46,
+    "nombre": "Cultivacispren",
+    "en": "Shallan's Sketchbook - Cultivationspren.jpg",
+    "es": "Cultivacispren.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Cultivationspren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Cultivacispren.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 47,
+    "nombre": "Urithiru",
+    "en": "Urithiru.jpg",
+    "es": "Shallan-Urithiru.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Urithiru.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Shallan-Urithiru.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 48,
+    "nombre": "Urithiru-atrio",
+    "en": "Shallan's Sketchbook - The Atrium.jpg",
+    "es": "Urithiru-atrio.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20The%20Atrium.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Urithiru-atrio.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 49,
+    "nombre": "Urithiru en el mapa",
+    "en": "Urithiru on the map.png",
+    "es": "Urithiru-en-el-mapa.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Urithiru%20on%20the%20map.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Urithiru-en-el-mapa.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 50,
+    "nombre": "Jah Keved en el mapa",
+    "en": "Jah Keved on the World Map.jpg",
+    "es": "Jah-Keved-en-el-mapa.PNG",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Jah%20Keved%20on%20the%20World%20Map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Jah-Keved-en-el-mapa.PNG",
+    "pendienteEs": false
+  },
+  {
+    "id": 51,
+    "nombre": "Ciudad Thaylen en el mapa",
+    "en": "Thaylen City on the map.jpg",
+    "es": "Ciudad-Thaylen-en-el-mapa.PNG",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Thaylen%20City%20on%20the%20map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Ciudad-Thaylen-en-el-mapa.PNG",
+    "pendienteEs": false
+  },
+  {
+    "id": 52,
+    "nombre": "Chulls",
+    "en": "Chull.jpg",
+    "es": "Shallan-Chulls.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Chull.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Shallan-Chulls.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 53,
+    "nombre": "Sabueso-hacha",
+    "en": "Axehound by Shallan.jpg",
+    "es": "Sabueso-hacha.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Axehound%20by%20Shallan.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Sabueso-hacha.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 54,
+    "nombre": "Honorspren",
+    "en": "Shallan's Sketchbook - Honorspren.jpg",
+    "es": "BocetosShallan-Honorspren.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Honorspren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/BocetosShallan-Honorspren.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 55,
+    "nombre": "Nota final Juramentada",
+    "en": "OB_Endnote.jpg",
+    "es": "Juramentada-notafinal.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/OB_Endnote.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Juramentada-notafinal.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 56,
+    "nombre": "La tomadora de secretos",
+    "en": "The_Taker_of_Secrets.jpg",
+    "es": "Tomadora-de-secretos.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/The_Taker_of_Secrets.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Tomadora-de-secretos.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 57,
+    "nombre": "Palabras radiantes nota final",
+    "en": "WoR_Endnote.jpg",
+    "es": "Palabras Notafinal.jpeg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/WoR_Endnote.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Palabras%20Notafinal.jpeg",
+    "pendienteEs": false
+  },
+  {
+    "id": 58,
+    "nombre": "Tintaspren",
+    "en": "Shallan's Sketchbook - Inkspren.jpg",
+    "es": "Tintaspren.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Inkspren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Tintaspren.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 59,
+    "nombre": "Campamentos de guerra alezi",
+    "en": "Warcamps.jpg",
+    "es": "Campos-de-guerra-alezi.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Warcamps.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Campos-de-guerra-alezi.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 60,
+    "nombre": "Moda contemporánea masculina",
+    "en": "Contemporary Male Fashion.jpg",
+    "es": "Moda-masculina-contemporanea.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Contemporary%20Male%20Fashion.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Moda-masculina-contemporanea.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 61,
+    "nombre": "Moda thayleña",
+    "en": "Contemporary Thaylen Female Fashion.jpg",
+    "es": "Moda-thaylena.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Contemporary%20Thaylen%20Female%20Fashion.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Moda-thaylena.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 62,
+    "nombre": "Alcanzadores",
+    "en": "Shallan's Sketchbook - Reachers.jpg",
+    "es": "BocetosShallan-Alcanzadores.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Reachers.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/BocetosShallan-Alcanzadores.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 63,
+    "nombre": "Cumbrespren",
+    "en": "Shallan's Sketchbook - Peakspren.jpg",
+    "es": "BocetosShallan-cumbrespren.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Shallan's%20Sketchbook%20-%20Peakspren.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/BocetosShallan-cumbrespren.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 64,
+    "nombre": "Havah vorin",
+    "en": "Vorin Havah.jpg",
+    "es": "havah-vorin-es.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Vorin%20Havah.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/havah-vorin-es.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 65,
+    "nombre": "Ba-Ado-Mishram",
+    "en": "Page from Mythica - Ba-Ado-Mishram.jpg",
+    "es": "Página_de_Mítica_-_Ba-Ado-Mishram.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Page%20from%20Mythica%20-%20Ba-Ado-Mishram.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/P%C3%A1gina_de_M%C3%ADtica_-_Ba-Ado-Mishram.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 66,
+    "nombre": "Herdaz",
+    "en": "SLWG Travelogue Herdaz.png",
+    "es": "GMAT cronica Herdaz.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/SLWG%20Travelogue%20Herdaz.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/GMAT%20cronica%20Herdaz.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 67,
+    "nombre": "Rall Elorim",
+    "en": "SLWG Travelogue Rall Elorim.png",
+    "es": "GMAT cronica Rall Elorim.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/SLWG%20Travelogue%20Rall%20Elorim.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/GMAT%20cronica%20Rall%20Elorim.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 68,
+    "nombre": "Campamento",
+    "en": "SLWG Travelogue Warcamps.png",
+    "es": "GMAT cronica Campamento.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/SLWG%20Travelogue%20Warcamps.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/GMAT%20cronica%20Campamento.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 69,
+    "nombre": "Celebrant",
+    "en": "SLWG Travelogue Celebrant.png",
+    "es": "GMAT cronica Celebrant.jpg",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/SLWG%20Travelogue%20Celebrant.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/GMAT%20cronica%20Celebrant.jpg",
+    "pendienteEs": false
+  },
+  {
+    "id": 70,
+    "nombre": "Mapa del lado diurno de Taldain",
+    "en": "Dayside map.jpg",
+    "es": "Mapa-lado-diurno.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/Dayside%20map.jpg",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/Mapa-lado-diurno.png",
+    "pendienteEs": false
+  },
+  {
+    "id": 71,
+    "nombre": "Mapa de T'Telir",
+    "en": "T-Telir.png",
+    "es": "MapaT'Telir.png",
+    "urlEn": "https://coppermind.net/wiki/Special:FilePath/T-Telir.png",
+    "urlEs": "https://es.coppermind.net/wiki/Special:FilePath/MapaT'Telir.png",
+    "pendienteEs": false
+  }
+]
