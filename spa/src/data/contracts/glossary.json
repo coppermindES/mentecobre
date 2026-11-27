@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "term": "Investiture",
+    "es": "Investidura",
+    "universeId": 5,
+    "universo": "Cosmere",
+    "urlEn": "https://coppermind.net/wiki/Investiture",
+    "urlEs": "https://es.coppermind.net/wiki/Investidura"
+  },
+  {
+    "id": 2,
+    "term": "Shard",
+    "es": "Esquirla",
+    "universeId": 5,
+    "universo": "Cosmere",
+    "urlEn": "https://coppermind.net/wiki/Shard",
+    "urlEs": "https://es.coppermind.net/wiki/Esquirla"
+  },
+  {
+    "id": 3,
+    "term": "Splinter",
+    "es": "Astilla",
+    "universeId": 5,
+    "universo": "Cosmere",
+    "urlEn": "https://coppermind.net/wiki/Splinter",
+    "urlEs": "https://es.coppermind.net/wiki/Astilla"
+  },
+  {
+    "id": 4,
+    "term": "Stormlight",
+    "es": "Luz tormentosa",
+    "universeId": 17,
+    "universo": "Archivo de las tormentas",
+    "urlEn": "https://coppermind.net/wiki/Stormlight",
+    "urlEs": "https://es.coppermind.net/wiki/Luz_tormentosa"
+  },
+  {
+    "id": 5,
+    "term": "Allomancy",
+    "es": "Alomancia",
+    "universeId": 10,
+    "universo": "Nacidos de la bruma",
+    "urlEn": "https://coppermind.net/wiki/Allomancy",
+    "urlEs": "https://es.coppermind.net/wiki/Alomancia"
+  },
+  {
+    "id": 6,
+    "term": "Feruchemy",
+    "es": "Feruquimia",
+    "universeId": 10,
+    "universo": "Nacidos de la bruma",
+    "urlEn": "https://coppermind.net/wiki/Feruchemy",
+    "urlEs": "https://es.coppermind.net/wiki/Feruquimia"
+  },
+  {
+    "id": 7,
+    "term": "Hemalurgy",
+    "es": "Hemalurgia",
+    "universeId": 10,
+    "universo": "Nacidos de la bruma",
+    "urlEn": "https://coppermind.net/wiki/Hemalurgy",
+    "urlEs": "https://es.coppermind.net/wiki/Hemalurgia"
+  },
+  {
+    "id": 8,
+    "term": "Mistborn",
+    "es": "Nacido de la bruma",
+    "universeId": 10,
+    "universo": "Nacidos de la bruma",
+    "urlEn": "https://coppermind.net/wiki/Mistborn",
+    "urlEs": "https://es.coppermind.net/wiki/Nacido_de_la_bruma"
+  },
+  {
+    "id": 9,
+    "term": "Cognitive Realm",
+    "es": "Reino Cognitivo",
+    "universeId": 5,
+    "universo": "Cosmere",
+    "urlEn": "https://coppermind.net/wiki/Cognitive_Realm",
+    "urlEs": "https://es.coppermind.net/wiki/Reino_Cognitivo"
+  },
+  {
+    "id": 10,
+    "term": "Fabrial",
+    "es": "Fabrial",
+    "universeId": 17,
+    "universo": "Archivo de las tormentas",
+    "urlEn": "https://coppermind.net/wiki/Fabrial",
+    "urlEs": "https://es.coppermind.net/wiki/Fabrial"
+  },
+  {
+    "id": 11,
+    "term": "The Frugal Wizard's Handbook for Surviving Medieval England",
+    "es": "La guía del mago frugal para sobrevivir en la Inglaterra del medievo",
+    "universeId": 11,
+    "universo": "Mago Frugal",
+    "urlEn": "https://coppermind.net/wiki/The_Frugal_Wizard",
+    "urlEs": "https://es.coppermind.net/wiki/Mago_Frugal"
+  }
+]

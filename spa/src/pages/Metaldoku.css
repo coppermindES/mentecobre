@@ -1,0 +1,288 @@
+.metaldoku-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaldoku {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.metaldoku-center {
+  max-width: min(560px, 96vw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metaldoku-stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--on-surface);
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+  flex-wrap: wrap;
+}
+
+.metaldoku-stat b {
+  font-weight: 800;
+}
+
+.metaldoku-board {
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0;
+}
+
+.metaldoku-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px #bdc3c7;
+  background: #fff;
+}
+
+.metaldoku-cell img.sudoku-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8%;
+  display: block;
+  box-sizing: border-box;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+.metaldoku-cell.border_h {
+  box-shadow: 0 0 0 1px #bdc3c7, inset 0 -2px 0 0 #34495e;
+}
+
+.metaldoku-cell.border_v {
+  box-shadow: 0 0 0 1px #bdc3c7, inset -2px 0 0 #34495e;
+}
+
+.metaldoku-cell.border_h.border_v {
+  box-shadow: 0 0 0 1px #bdc3c7, inset -2px 0 0 black, inset 0 -2px 0 black;
+}
+
+.metaldoku-cell.selected {
+  background: #ffe;
+}
+
+.metaldoku-cell.group {
+  background: rgba(52, 73, 94, 0.12);
+}
+
+.metaldoku-cell.selected.current {
+  background: #3f3f3f;
+  box-shadow: 0 0 3px 3px #bdc3c7;
+  z-index: 1;
+}
+
+.metaldoku-cell.selected.current img.sudoku-image {
+  filter: brightness(0) invert(1);
+}
+
+.metaldoku-cell.fix {
+  background-color: #ecf0f1;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.metaldoku-cell.correct {
+  background-color: #fff;
+}
+
+.metaldoku-cell.incorrect {
+  background-color: #e74c3c;
+}
+
+.metaldoku-cell.incorrect img {
+  filter: brightness(0) invert(1);
+}
+
+.metaldoku-cell.highlight-same {
+  background-color: #ffc1ca;
+  transition: background-color 0.3s ease;
+}
+
+.metaldoku-console {
+  margin: 1.25rem auto 0;
+  width: 100%;
+}
+
+.metaldoku-metal-buttons {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.metaldoku-num {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #bdc3c7;
+  box-sizing: border-box;
+  border-radius: 6px;
+  transition: background 0.2s;
+  padding: 6px;
+}
+
+.metaldoku-num img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.metaldoku-num:hover {
+  background: #7c7c7c;
+}
+
+.metaldoku-num.metaldoku-erase {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+  height: 48px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background-color: #3f3f3f;
+  border-radius: 9999px;
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.metaldoku-num.metaldoku-erase:hover {
+  background-color: #c0392b;
+}
+
+.metaldoku-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.metaldoku .btn,
+.metaldoku-gameover .btn {
+  padding: 0.85rem 1.6rem;
+  font-size: 1rem;
+}
+
+.metaldoku-toolbar .btn {
+  min-width: 120px;
+}
+
+.metaldoku-empty {
+  text-align: center;
+  color: var(--on-surface-variant);
+  padding: 2rem 0 1rem;
+}
+
+.metaldoku-difficulty {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 18rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metaldoku-difficulty .btn {
+  min-width: 150px;
+}
+
+.metaldoku-difficulty-hint {
+  color: var(--on-surface);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.metaldoku-gameover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metaldoku-gameover .metaldoku-dialog {
+  background-color: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  min-width: min(300px, 90vw);
+}
+
+.metaldoku-gameover h2 {
+  color: var(--on-surface);
+  margin: 0 0 20px;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.metaldoku-gameover p {
+  color: var(--on-surface-variant);
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.metaldoku-gameover .btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .metaldoku-metal-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .metaldoku-metal-buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 320px) {
+  .metaldoku-metal-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

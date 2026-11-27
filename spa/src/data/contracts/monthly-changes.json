@@ -1,0 +1,188 @@
+[
+  {
+    "id": 1,
+    "articleId": 8214,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-28",
+    "revisarDesde": "2026-09-05",
+    "hecho": false
+  },
+  {
+    "id": 2,
+    "articleId": 8234,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-12",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 3,
+    "articleId": 159,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-19",
+    "cambiosGrandes": true,
+    "hecho": false
+  },
+  {
+    "id": 4,
+    "articleId": 7785,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-22",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 5,
+    "articleId": 99999,
+    "tituloEn": "Irei",
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-05",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 6,
+    "articleId": 7986,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "tipo": "htup",
+    "fechaCambioEn": "2026-08-30",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 7,
+    "articleId": 12345,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "tipo": "htup",
+    "fechaCambioEn": "2026-08-31",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 8,
+    "articleId": 100001,
+    "tituloEn": "Threnody",
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-03",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 9,
+    "articleId": 100002,
+    "tituloEn": "Mraize",
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-09",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 10,
+    "articleId": 100003,
+    "tituloEn": "Scadrial",
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-15",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 11,
+    "articleId": 153,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-02",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 12,
+    "articleId": 7595,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-06",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 13,
+    "articleId": 7602,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-10",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 14,
+    "articleId": 7895,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-14",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 15,
+    "articleId": 7923,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-18",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 16,
+    "articleId": 7959,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-21",
+    "cambiosGrandes": true,
+    "hecho": false
+  },
+  {
+    "id": 17,
+    "articleId": 7965,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-25",
+    "revisarDesde": null,
+    "hecho": false
+  },
+  {
+    "id": 18,
+    "articleId": 8186,
+    "mesInicio": "2026-08-01",
+    "mesFin": "2026-08-31",
+    "estado": "nuevo",
+    "fechaCambioEn": "2026-08-29",
+    "revisarDesde": null,
+    "hecho": false
+  }
+]

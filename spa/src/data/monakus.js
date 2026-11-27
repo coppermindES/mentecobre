@@ -1,0 +1,490 @@
+import { IMGS } from './monakus-imgs'
+
+export const MONAKUS = {
+  marca: 'Escuela Monakus',
+  aviso: 'No olvide presentar su solicitud de matrícula antes de que termine el plazo.',
+  inicio: {
+    titulo: 'ESCUELA MONAKUS',
+    emblem: IMGS.emblem,
+    hero: IMGS.hero,
+    parrafos: [
+      '¿Te gustaría aprender a usar la magia en el Cosmere? ¿Quieres descubrir los secretos de los mundos esquirlados, los mundos creados por los fragmentos de Adonalsium, el poder de la creación?',
+      'Si tu respuesta es sí, entonces la Escuela Monakus es el lugar ideal para ti. Es una institución educativa fundada por el mismísimo profesor Monakus y sus mejores y más dedicados seguidores, que han dedicado su vida a explorar el Cosmere y a aprender sobre sus diferentes formas de magia. Es considerado uno de los saltamundos más experimentados y respetados, y ha tenido contacto con algunos de los Recipientes, tanto originales como posteriores.',
+      'Este centro, que lleva su nombre, abre sus puertas con el propósito de compartir su conocimiento y su pasión por el Cosmere con las nuevas generaciones. Es el director de la escuela, y se encargará personalmente de seleccionar a los alumnos y al personal.',
+    ],
+    video: {
+      titulo: 'Video Presentación',
+      preview: 'https://drive.google.com/file/d/1r38JA9cr8mSYLOm4eSsx_hOPfG7m0ZJb/preview',
+    },
+  },
+  presentacion: {
+    titulo: 'PRESENTACIÓN',
+    himno: {
+      titulo: 'Nuestro himno',
+      versos: [
+        'Somos la Escuela Monakus',
+        'Donde aprendemos del Cosmere',
+        'Exploramos sus mundos y secretos',
+        'Y sus fuerzas que nos hacen crecer',
+        '',
+        'Estudiamos el aliento y la investidura',
+        'La alomancia y la feruquimia',
+        'La Realmática y la resonancia',
+        'Y a la Esquirla que nos guía',
+        '',
+        'Buscamos la verdad y la armonía',
+        'Entre las sombras y las luces',
+        'Respetamos la vida y la diversidad',
+        'De las razas y los cultos',
+        '',
+        'Somos la Escuela Monakus',
+        'Donde soñamos con el Cosmere',
+        'Nos inspiramos en sus héroes y leyendas',
+        'Y sus historias que nos hacen crecer',
+      ],
+    },
+    parrafos: [
+      'En la Escuela Monakus podrás aprender las diferentes formas de magia que existen en el Cosmere, desde el alomancia y la feruquimia de Scadrial, hasta el despertar de Nalthis, pasando por la potenciación y los fabriales de Roshar, entre muchas otras.',
+      'La Escuela Monakus está ubicada en Luzdeplata, una ciudad cosmopolita y vibrante que se encuentra en el centro del Cosmere. Luzdeplata es un punto de encuentro para los saltamundos, los viajeros que se mueven entre los mundos esquirlados usando las perpendicularidades, los portales que conectan los diferentes Reinos. En Luzdeplata podrás conocer a gente de todas las culturas y razas, así como disfrutar de su rica gastronomía, su variada oferta cultural y su animada vida nocturna.',
+      'En la Escuela Monakus no solo recibirás una formación académica de primer nivel, sino que también vivirás experiencias inolvidables junto a tus compañeros y profesores. Participarás en actividades extraescolares, excursiones, competiciones y proyectos que te harán crecer como persona y experto en el Cosmere. Además, gracias a las múltiples ponencias que organizamos, tendrás la oportunidad de conocer personalmente a algunos de los personajes más famosos e influyentes del Cosmere, como Hoid, Khriss o Xisisrefliel.',
+      'Al igual que en la ciudad en la que nos encontramos, Luzdeplata, somos una institución ecléctica que valora la diversidad y la cercanía entre especies, considerando que una buena relación interplanetaria es una base fundamental para el devenir del Cosmere.',
+      'No lo dudes más y apúntate ya a la Escuela Monakus. El Cosmere te espera.',
+    ],
+    tríptico: {
+      titulo: 'CONOCE NUESTRO TRÍPTICO INFORMATIVO',
+      imagenes: [
+        IMGS.trip1,
+        IMGS.trip2,
+        IMGS.trip3,
+        IMGS.trip4,
+        IMGS.trip5,
+        IMGS.trip6,
+      ],
+    },
+  },
+  instalaciones: {
+    titulo: 'NUESTRAS INSTALACIONES',
+    bloques: [
+      {
+        titulo: 'Ejercicio',
+        imagen: IMGS.inst1,
+        parrafos: [
+          'La Escuela Monakus es un lugar donde los estudiantes pueden aprender sobre las diferentes formas de magia que existen en los distintos planetas, pero no solo se trata de estudiar teoría y practicar con los metales, la luz tormentosa, el aliento o la Investidura. También se necesita tener un buen estado físico y mental para poder aprovechar al máximo el potencial de cada uno.',
+          'Por eso, la parte física es muy importante en el currículo escolar. Los alumnos tienen que realizar ejercicios variados que les ayuden a desarrollar su fuerza, resistencia, agilidad, equilibrio y coordinación. Además, también se les enseña a usar sus habilidades mágicas de forma creativa y estratégica en diferentes situaciones.',
+          'Algunos ejemplos de actividades que se realizan en la clase de gimnasia son:',
+        ],
+        lista: [
+          'Carreras de obstáculos con impedimentos que cambian según el planeta que queramos representar. Por ejemplo, simulando Roshar tienen que sortear grandes acantilados o vientos fuertes, mientras que la práctica de Scadrial será un recorrido ayudándote de elementos metálicos repartidos por un circuito.',
+          'Combates simulados entre equipos que usan diferentes tipos de magia. Por ejemplo, alomantes contra feruquimistas o despertadores contra potenciadores.',
+          'Juegos cooperativos que requieren trabajar en equipo y combinar las diferentes habilidades mágicas. Deberán aumentar su fuerza para mover objetos, utilizar potenciación para iluminar una zona, maestría de la arena para golpear mecanismos o despertar objetos para conseguir sus objetivos.',
+        ],
+      },
+      {
+        titulo: 'Aulas modernas',
+        imagen: IMGS.inst2,
+        parrafos: [
+          'Una de las ventajas de estudiar en la Escuela Monakus es la capacidad de contar con aulas muy avanzadas tecnológicamente. De esta forma, los alumnos pueden aprender de forma dinámica, interactiva y divertida sobre el Cosmere.',
+        ],
+        lista: [
+          'Pantallas interactivas que permiten acceder a información actualizada sobre los diferentes planetas, sistemas de magia, personajes históricos, eventos y teorías.',
+          'Proyectores holográficos que recrean escenarios y situaciones de toda la historia en tres dimensiones, para que los alumnos puedan observar y experimentar con ellos.',
+          'Simuladores virtuales que permiten viajar a los diferentes planetas y explorar sus culturas, geografía, flora y fauna.',
+        ],
+      },
+      {
+        titulo: 'Cafetería',
+        imagen: IMGS.inst3,
+        parrafos: [
+          'La cafetería es un espacio donde los alumnos pueden descansar, socializar y disfrutar de una comida deliciosa y saludable, además de ser un ejemplo de cómo la escuela valora y celebra la diversidad y la inclusión:',
+        ],
+        lista: [
+          'Ofrece un menú variado y adaptado a las preferencias y necesidades biológicas de cada alumno. Por ejemplo, hay opciones vegetarianas, veganas, kosher, sin gluten, sin lactosa, etc. También hay platos típicos de cada planeta, como el chouta de Roshar, bocaditos dulces de PahnKahl de Nalthis, vino de Scadrial, té de Sel o ZaiDon de Taldain.',
+          'Tiene una decoración acogedora y temática, con carteles, murales y objetos relacionados con el Cosmere. Cada mesa tiene un símbolo que representará a un planeta o sistema de magia, para que los alumnos puedan elegir dónde sentarse según sus afinidades o intereses a la hora de tener una conversación. Estos símbolos irán variando a lo largo del curso para fomentar que los alumnos se relacionen con mayor variedad de compañeros.',
+          'Cuenta con un personal amable y profesional, que habla varios idiomas y conoce las características y costumbres de cada raza y planeta. Estarán siempre dispuestos a ayudar, aconsejar y resolver cualquier duda o problema que pueda surgir.',
+        ],
+      },
+      {
+        titulo: 'Profesorado',
+        imagen: IMGS.inst4,
+        parrafos: [
+          'Los alumnos pueden estar seguros de que recibirán una educación de calidad y de que disfrutarán de una experiencia única e inolvidable. Nuestro claustro es la mejor opción a la hora de aprender sobre el Cosmere:',
+        ],
+        lista: [
+          'Los profesores son expertos con un amplio conocimiento y experiencia en los diferentes planetas, sistemas de magia, eventos y teorías del funcionamiento del universo.',
+          'Son capaces de transmitir su pasión y entusiasmo por el Cosmere, motivando e inspirando a los alumnos a aprender y a disfrutar de la lectura y la escritura.',
+          'Tenemos un sistema didáctico y pedagógico puntero en el mundo de la enseñanza, utilizando métodos innovadores y efectivos para poder instruir de forma dinámica, interactiva y divertida.',
+          'Los profesores son respetuosos y comprensivos, adaptando su enseñanza a las necesidades, intereses y ritmos de aprendizaje de cada alumno.',
+          'Es un grupo de personas accesible y cercano, estableciendo una relación de confianza y colaboración con los alumnos, y ofreciéndoles apoyo y orientación en su camino en la Escuela Monakus.',
+        ],
+      },
+      {
+        titulo: 'Tecnología',
+        imagen: IMGS.inst5,
+        parrafos: [
+          'La Escuela Monakus es un lugar donde los alumnos pueden aprender sobre las diferentes formas de magia que existen en los distintos planetas del universo, pero no solo se trata de estudiar teoría y practicar con los propios sistemas, sino también, de aprovechar los avances tecnológicos que cada planeta ha desarrollado a lo largo de su historia y que pueden ser de gran utilidad para el aprendizaje. Estos no solo facilitan la instrucción en las diferentes formas de magia, sino que también fomentan el intercambio cultural y la cooperación entre los distintos planetas del universo.',
+        ],
+        lista: [
+          'En las clases de alomancia, se usan dispositivos electrónicos que pueden medir la cantidad y la pureza de los metales que los alumnos ingieren y queman, así como la intensidad y la dirección de las líneas azules que ven al quemar acero o hierro. Estos dispositivos ayudan a los alumnos a controlar mejor su uso de la Investidura, así como a evitar el envenenamiento por metales. Estos dispositivos provienen de Scadrial.',
+          'En las clases de despertar, se utilizan telas tintadas exclusivamente con pigmentos extraídos de las lágrimas de Edgli, que permitirán crear objetos despertados con más facilidad y creatividad, así como practicar el uso de comandos verbales. Estas telas provienen de Nalthis.',
+          'En las clases de potenciación se usan guantes fabriales especiales que pueden generar campos de gravedad artificiales que simulan uno de los efectos que se pueden lograr con la luz tormentosa y la potenciación. Permiten a los alumnos volar y manipular objetos sin necesidad de tener un vínculo Nahel real. Estos guantes provienen de Roshar.',
+        ],
+        notaFinal: 'Estos son sólo algunos ejemplos, pero hay muchos más avances tecnológicos que se usan en la Escuela Monakus.',
+      },
+      {
+        titulo: 'Biblioteca',
+        imagen: IMGS.inst6,
+        parrafos: [
+          'Nuestra biblioteca es un lugar donde los alumnos pueden acceder a una gran variedad de libros, documentos, audios y videos en los que podrán consultar las obras más antiguas y fundamentales del Cosmere y las más recientes y novedosas. También ofrecemos grabaciones de las diferentes ponencias que se llevan a cabo de manera habitual en nuestras clases.',
+          'No solo contamos con libros físicos, sino también de versión digital para que los alumnos puedan acceder a la información de los tomos más antiguos sin peligro de que sus hojas se deterioren con el tiempo.',
+          'Algunas de nuestras posesiones más preciadas son:',
+        ],
+        lista: [
+          'Original de «Palabras de Instauración» que el mismo Armonía entregó al lord Nacido de la Bruma en lo que ahora conocemos como Cuenca de Elendel.',
+          '«El camino de los reyes» en una de sus primeras ediciones.',
+          'El diario de Alendi',
+          'Cartas que Hoid envió a diferentes entidades del Cosmere',
+          'Copia antigua del «Eila Stele», la obra escrita más antigua conocida en Roshar y escrita en canto del alba.',
+          '«Manual del cortejo y la familia para la dama educada»',
+          '«Wyrn el rey»',
+          'El ejemplar comprado por la brillante Shallan Davar en Kharbranth de «Eternathis»',
+        ],
+      },
+      {
+        titulo: 'Laboratorio',
+        imagen: IMGS.inst7,
+        parrafos: [
+          'Nuestro laboratorio encaja a la perfección dentro del estudio del Cosmere, porque permite a los alumnos comprender mejor los principios y las propiedades de la investidura, así como experimentar con sus posibilidades y limitaciones. Es un lugar donde los alumnos pueden aprender y desarrollar su curiosidad y su creatividad científica y cuenta con los siguientes recursos y actividades:',
+        ],
+        lista: [
+          'Instrumentos y materiales para medir y observar objetos investidos, como espectrómetros, balanzas, microscopios, termómetros, etc.',
+          'Muestras de diferentes tipos de Investidura, como metales utilizables en las Artes Metálicas, gemas infusas y apagadas, alientos, diferentes tipos de esencias, etc.',
+          'Experimentos guiados y libres para probar los efectos de la investidura en diferentes objetos y situaciones, como la combustión de los metales, la activación de las gemas infusas, la transferencia del aliento o la activación de las esporas con agua.',
+        ],
+        parrafosDespues: [
+          'No hay ningún experimento peligroso en el laboratorio. Todos siguen estrictamente las normas de seguridad y prevención, y cuentan con la supervisión y la capacitación de profesionales expertos. Todos los experimentos que se realizan en el laboratorio tienen fines educativos y científicos, y no buscan causar daño o destrucción. La Escuela Monakus respeta y protege la vida y tiene un protocolo de actuación para garantizar la seguridad y el bienestar de todos los alumnos y trabajadores.',
+          'En caso de emergencia o accidente en el laboratorio, se toman las siguientes medidas:',
+        ],
+        pasos: [
+          'Se activa la alarma y se avisa al personal de seguridad y sanitario de la escuela.',
+          'Se siguen las instrucciones del profesor o del responsable del laboratorio, que pueden ser evacuar el lugar, apagar los equipos, aislar la zona afectada, etc.',
+          'Se usa el equipo de protección personal adecuado, como guantes, gafas, mascarillas, etc.',
+          'Se presta atención y asistencia a las personas que puedan estar heridas o afectadas, y se les traslada al centro médico de la escuela si es necesario.',
+          'Se informa del incidente al director de la escuela y al departamento correspondiente y se colaborará con la investigación del suceso y la reparación de los daños.',
+        ],
+      },
+      {
+        titulo: 'Taller',
+        imagen: IMGS.inst8,
+        parrafos: [
+          'El taller es un lugar donde los alumnos pueden explorar su potencial creativo y científico, y donde pueden divertirse y aprender con la investidura. Aquí investigarán y podrán desarrollar diferentes objetos mecánicos que, en un futuro, pueden extenderse por todo el Cosmere y ayudar a usuarios de todos los planetas. Este es el lugar perfecto para llevar a cabo todo lo que han ido aprendiendo y mejorando en el laboratorio o sus clases teóricas. Otras cosas que podrán realizar son:',
+        ],
+        lista: [
+          'Investigar sobre los orígenes y el funcionamiento de los fabriales, y sobre las personas que los inventaron o los usaron en el pasado. Por ejemplo, Navani Kholin, una de las mayores expertas en fabriales de Roshar, o Khrissalla, una erudita del Cosmere que ha estudiado la Investidura de diferentes planetas.',
+          'Comparar y contrastar los fabriales con otros sistemas mágicos del Cosmere, y ver cómo se pueden combinar o complementar entre ellos. Por ejemplo, podrán ver cómo la alomancia de Scadrial puede interactuar con las gemas infusas de Roshar, o cómo el despertar podría afectar a los spren que componen los fabriales.',
+          'Crear sus propios fabriales personalizados, según sus gustos, necesidades e intereses. Por ejemplo, podrán crear un fabrial que les permita escuchar música, que les facilite el estudio, que les ayude a entrar en calor o comunicarse a través de largas distancias.',
+        ],
+      },
+    ],
+  },
+  basica: {
+    titulo: 'ENSEÑANZA BÁSICA',
+    parrafos: [
+      'Este es un tipo de enseñanza en el que se pondrán en valor los conceptos básicos del Cosmere y está enfocada a aquellas personas que no han podido profundizar en los conceptos generales del universo. En la Escuela Monakus aprenderás sobre los mundos, sus Esquirlas, sus magias y personas más relevantes. También aprenderás a reconocer las pistas y referencias que conectan los diferentes planetas entre sí. Además, tendrás la oportunidad de leer y analizar algunas de las obras más representativas del Cosmere. Al finalizar este nivel, estarás preparado para profundizar en los aspectos más avanzados y complejos del Cosmere.',
+    ],
+    asignaturas: {
+      titulo: 'ASIGNATURAS',
+      items: [
+        {
+          nombre: 'Orígenes del Cosmere',
+          texto:
+            '¿Quién era Adonalsium? ¿Quién existió antes que él? Viajamos al pasado para descubrir el origen primordial del universo, su creación y evolución, pasando por el gran evento de la Fragmentación de Adonalsium y la creación de las diferentes Esquirlas y los diferentes bandos que se crearon.',
+        },
+        {
+          nombre: 'Cartografía y etnología planetaria',
+          texto:
+            'Conoceremos los diferentes planetas, sus costumbres, ideas, religiones y su flora y fauna ayudándonos de los proyectores holográficos de los que dispone el centro. Podremos hacer viajes inmersivos sin necesidad de movernos de Luzdeplata, pero teniendo una experiencia prácticamente igual a la que tendríamos realizando estudios de campo.',
+        },
+        {
+          nombre: 'Ciencia de la Investidura',
+          texto:
+            'Un pequeño acercamiento a los fundamentos científicos que tiene la Investidura en sus tres formas (sólida, líquida y gaseosa), así como pequeñas muestras en el laboratorio de su comportamiento en diferentes situaciones. Clase teórico-práctica.',
+        },
+        {
+          nombre: 'Teoría Realmática',
+          texto:
+            'Estudiaremos los diferentes reinos que existen en el Cosmere, el Reino Físico, el Reino Cognitivo y el Reino Espiritual y cómo se interrelacionan entre sí. Aprenderemos las diferentes maneras que existen de atravesarlos y cómo afecta la investidura a cada uno de ellos.',
+        },
+        {
+          nombre: 'Arte y magia en el Cosmere',
+          texto:
+            'Aspectos teóricos y prácticos de cómo las diferentes formas de expresión artística pueden interactuar con los distintos sistemas de magia que existen. Los alumnos aprenderían a usar la Investidura, la energía mágica que impregna el Cosmere, para crear obras de arte que reflejen o modifiquen la realidad de los tres Reinos: el Físico, el Cognitivo y el Espiritual. También aprenderían a apreciar y analizar las obras de arte creadas por otras culturas y civilizaciones del Cosmere, así como a comprender las implicaciones éticas y morales de usar el arte como herramienta de poder o de cambio.',
+        },
+        {
+          nombre: 'Historia interplanetaria (dividido en bloques)',
+          texto:
+            'Se profundizará en la historia concreta del planeta, tanto anterior como posterior a la llegada de su/s Esquirla/s, personajes importantes y en qué bando se encuentran del Cosmere.',
+          sublistas: [
+            'I - Gran Roshar y Primero del Sol',
+            'II - Sel, Treno y Lumar',
+            'III - Scadrial y Taldain',
+            'IV - Nalthis y Komashi',
+          ],
+        },
+        {
+          nombre: 'Tecnología e innovación en el Cosmere',
+          texto:
+            'Estudiar los avances tecnológicos que se han desarrollado en los diferentes planetas del Cosmere, tanto los que usan la investidura como los que no. Los alumnos aprenderán sobre los inventos y las innovaciones más importantes o curiosas de cada planeta, como los fabriales de Roshar, las máquinas a vapor de Scadrial o los sellos de Sel. También aprenderán sobre cómo se pueden combinar o mejorar estas tecnologías con la magia o con otros recursos.',
+        },
+        {
+          nombre: 'Fundamentos de los Mandatos y la Intención',
+          texto:
+            'Dos de los elementos generales y primordiales en el Cosmere, como son los Mandatos y la Intención, forman parte de la utilización diaria de la Investidura, por lo que aprender lo que son, cómo funcionan y cómo trabajar con ellos es algo que en la Escuela Monakus nos tomamos muy en serio. Esta asignatura formará parte de la base que nuestros alumnos deben tener bien afianzado, ya que sin ello el resto de aprendizaje puede tambalearse.',
+        },
+      ],
+    },
+    horario: {
+      titulo: 'HORARIO',
+      imagen: IMGS.horario,
+    },
+    recursos: {
+      titulo: 'RECURSOS NECESARIOS',
+      libros: [
+        '«Adonalsium como ser de la creación», de Ysondra la Cotónica',
+        '«El BigPum y otros eventos cósmicos del Cosmere», de Xisisrefliel',
+        '«Historia primordial y Éter-na», de Silajana',
+        '«Religiones del Scadrial clásico», de Josephus Seisd',
+        '«Bases tangibles de la Investidura», de John D. Alar',
+        '«Teoría Realmática para doomies», de Wan ShaiLu',
+        '«Ardillas que chillan como marranas y otras formas de arte despertado», de Sondeluz el Audaz',
+        '«Tejido de luz roshariano como performance en el Cosmere actual», de Shallan Kholin',
+        '«Sel o no Sel: estudios del seon», de Isel Pehache',
+        '«Avances tecnológicos y sus usos en los diferentes sistemas», de Sof Tarcsel',
+        '«¿Piedra o crem? Introducción al entorno roshariano», de Tien',
+        '«Persianas radiantes y el futuro tecnológico ecléctico del Cosmere», de Regunarok',
+        '«Juramentos rotos: la verdad tras la Traición de los Radiantes Perdidos», de Jasnah Kholin',
+        '«Esta Casa es una Ruina: ascenso y declive de las Grandes Casas durante el Colapso», de Kelsier el Superviviente de Hathsin, Primero de su Nombre, Señor de las Cicatrices y Salvador de Sureños.',
+        '«Heral-dos y se cayó el del medio: historia del ciclo de las Desolaciones», de Ethid y Jochi.',
+        '«1000 maneras de ir al Más Allá. Los peligros del Cosmere», de Rick O\'Connell',
+        '«¿Muerte? No lo creo, mi ciela: descifrando los indescifrables misterios de los Retornos», de Llarimar',
+        '«Cuando la Intención sí es lo que cuenta», de El Lopen',
+        '«Porque lo digo yo. Guía práctica sobre Mandatos», VVAA (Hesina, Navani, Silencio, Rabeniel, Steris, Evi, Ulba y otras madres colaboradoras)',
+        '«Principios de la geología en los diferentes planetas», de Tien',
+      ],
+    },
+  },
+  avanzada: {
+    titulo: 'ENSEÑANZA AVANZADA',
+    parrafos: [
+      'La enseñanza más avanzada de la Escuela Monakus está diseñada para aquellos alumnos que quieren profundizar en el estudio y el uso de la magia en el Cosmere. Se divide en dos opciones: la teórica y la práctica.',
+      'La opción teórica está orientada a los futuros eruditos, que quieren dedicarse a la investigación y el análisis de los fenómenos mágicos del Cosmere. En esta opción, los alumnos aprenderán los principios y las leyes que rigen la magia en el Cosmere, así como las diferentes teorías y modelos que se han propuesto para explicarla. También aprenderán a usar herramientas y métodos científicos para realizar experimentos y observaciones sobre la magia, y a comunicar sus resultados y conclusiones de forma rigurosa y clara. Además, tendrán acceso a fuentes de información privilegiadas, como los escritos de Khriss, la principal erudita del Cosmere, así como los diferentes recursos que su compañero Nazh ha ido adquiriendo.',
+      'La opción práctica está dirigida a los futuros usuarios de los distintos sistemas de magia, que quieren aprender a dominar y aplicar la magia en el Cosmere. En esta opción, los alumnos aprenderán las técnicas y habilidades necesarias para usar la magia de forma eficaz y segura, así como las ventajas y desventajas de cada sistema mágico. También aprenderán a adaptarse a las condiciones y limitaciones de cada mundo, y a combinar diferentes formas de magia para lograr efectos sorprendentes. Además, tendrán la oportunidad de entrenar con maestros expertos en cada sistema mágico, como Vin, la Guerrera Ascendente, o Vasher, uno de los Cinco Sabios de Nalthis.',
+      'La enseñanza más avanzada de la Escuela Monakus es un reto exigente pero gratificante, que requiere un alto nivel de compromiso y dedicación por parte de los alumnos. Al finalizar esta enseñanza, los alumnos estarán preparados para convertirse en los líderes y protagonistas del futuro del Cosmere.',
+      'Para la matriculación en cualquiera de las modalidades, el alumno deberá elegir (de manera obligatoria) cuatro optativas, en el caso de las enseñanzas teórica y práctica, y ocho en el caso de cursar la doble titulación. Si quisiera cursar más asignaturas tendrá que realizar nuestro Método Mastrell.',
+    ],
+    ramas: [
+      {
+        nombre: 'RAMA TEÓRICA',
+        imagen: IMGS.rama1,
+        troncales: [
+          'Ingeniería artifabriana',
+          'Estudios avanzados de los Atributos del Cosmere',
+          'Fundamentos de los ejes',
+          'Veristitalismo como fundamento del estudio',
+        ],
+        optativas: [
+          'Estudios de la naturaleza cuántica de los spren',
+          'Filosofía de la ciencia',
+          'Antropología sociocultural',
+          'Historia del Cosmere actual',
+          'La tradición hermenéutica',
+          'Cartografía y etnología subastral avanzada',
+          'Análisis comportamental del usuario investido',
+          'Dialéctica y mayéutica (clase práctica)',
+          'Sistemas de escritura',
+          'Análisis de datos y metodología aplicada',
+        ],
+      },
+      {
+        nombre: 'RAMA PRÁCTICA',
+        imagen: IMGS.rama2,
+        troncales: [
+          'Ingeniería artifabriana',
+          'Estudios avanzados de los Atributos del Cosmere',
+          'Aprendizaje y control motor',
+          'Biomecánica del cuerpo investido',
+        ],
+        optativas: [
+          'Fundamentos de los ejes',
+          'Metalurgia adaptiva aplicada al uso de la Investidura',
+          'Prevención de riesgos en entornos adversos',
+          'Estudios aplicados de la Investidura en Sel. Teórico-práctica',
+          'Estudios aplicados de la Investidura en las Artes Metálicas. Teórico-práctica',
+          'Estudios aplicados de la potenciación. Teórico-práctica',
+          'Estudios de los objetos despertados. Teórico-práctica',
+          'Anatomía aplicada a la hemalurgia. Asignatura teórica',
+          'Desventajas de la Investidura en sus diferentes expresiones.',
+          'Diseño y análisis de estudios de supervivencia para saltamundos',
+        ],
+      },
+      {
+        nombre: 'DOBLE TITULACIÓN',
+        imagen: IMGS.rama3,
+        troncales: [
+          'Ingeniería artifabriana',
+          'Estudios avanzados de los Atributos del Cosmere',
+          'Fundamentos de los ejes',
+          'Veristitalismo como fundamento del estudio',
+          'Aprendizaje y control motor',
+          'Biomecánica del cuerpo investido',
+        ],
+        optativas: [
+          'Estudios de la naturaleza cuántica de los spren',
+          'Filosofía de la ciencia',
+          'Antropología sociocultural',
+          'Historia del Cosmere actual',
+          'La tradición hermenéutica',
+          'Cartografía y etnología subastral avanzada',
+          'Análisis comportamental del usuario investido',
+          'Dialéctica y mayéutica (clase práctica)',
+          'Sistemas de escritura',
+          'Análisis de datos y metodología aplicada',
+          'Fundamentos de los ejes',
+          'Metalurgia adaptiva aplicada al uso de la Investidura',
+          'Prevención de riesgos en entornos adversos',
+          'Estudios aplicados de la Investidura en Sel. Teórico-práctica',
+          'Estudios aplicados de la Investidura en las Artes Metálicas. Teórico-práctica',
+          'Estudios aplicados de la potenciación. Teórico-práctica',
+          'Estudios de los objetos despertados. Teórico-práctica',
+          'Anatomía aplicada a la hemalurgia. Asignatura teórica',
+          'Desventajas de la Investidura en sus diferentes expresiones.',
+          'Diseño y análisis de estudios de supervivencia para saltamundos.',
+        ],
+      },
+    ],
+    lecturas: {
+      titulo: 'LECTURAS RECOMENDADAS',
+      libros: [
+        '«La creación de máquinas investidas como ayuda en tus proyectos», de Sira la Elantrosa, madre de máquinas',
+        '«Guía de tiro en zonas letales y no letales», de Ranette con la colaboración de Wayne Terrisano',
+        '«El antris, el durantris y el despuestris del Dor. Descubrimiento, bloqueo y usos teóricos y prácticos actuales», de Renata Ataner',
+        '«Cómo despertarte de la cama y cómo despertar objetos con alientos», de César Caesar',
+        '«La guerra de la Venganza y cómo me coronaron reina», de Jasnah Kholin',
+        '«Programación orientada a sinvidas», de Shashara',
+        '«Fundamentos físicos de la Investidura», de Hoid',
+        '«Lunamuakisuonimasoni, poesía comecuernos» de Numuhukumakiaki\'aialunamor',
+        '«¿Qué me pongo? Compendio completo de moda, a través de las eras y actual, para visitantes de Roshar», de Adolin Kholin',
+        '«Mitos y falsas creencias de los sistemas de magia», de Frost',
+        '«Anatomía aplicada a la hemalurgia», de Marsh',
+        '«Pablito clavó un clavito: creación y mantenimiento de criaturas hemalúrgicas», de Rashek',
+        '«La música está bien, el metal prevalece. Artificería avanzada», del maestro Kilvin',
+        '«El metal se oxida, la música dura eternamente», de Kvothe SinSangre',
+        '«Introducción a la mayéutica», de Roberto Iniesta',
+        '«Impugnación como método dialéctico», de S. Monroy',
+        '«Personajes destacables y normalitos de la historia del Cosmere», de T. Balrog',
+        '«Búsqueda y estudio de los spren», de Axies el Coleccionista',
+        '«Dragones y perpendicularidades», de Rand al\'Thor',
+        '«Física axial», de Khrisalla',
+        '«Ética y deontología en el veristitalismo contemporáneo», de Torol Sadeas y Meridas Amaram',
+        '«La química de las artes del metal», de Waxillium Ladrian',
+        '«1001 catástrofes: anticipación, preparación y reconstrucción posterior», de Steris Ladrian',
+        '«Declive y auge de Disparo al Amanecer: una historia de superación, amor y, sobre todo, verdadera amistad», de Alomante Jak',
+        '«Fundamentos físicos de los fabriales», de Navani Kholin',
+        '«Acciones y reacciones de la Investidura. Cómo todo puede hacer PUM y convertirse en Chocapic», de Wayne Terrisano',
+        '«Conciencia corporal: aprende a escuchar a tu cuerpo», de Rysn',
+        '«Todos morimos en la batalla de Luthadel», de Sazed',
+        '«Abismoides: análisis sobre sus costumbres e impacto de la guerra de la Venganza en su nicho ecológico», de Shallan Davar',
+        '«El movimiento del cuerpo como Conexión y expresión de la Investidura», de Shuden',
+        '«No me toquéis las palmas que me conozco», de Rayse',
+        '«Si saben cómo me pongo, para qué me invitan», de Jezrien',
+        '«Teoría completa de la música y armonía», de Jaxlim',
+        '«Todo a la vez en todas partes», de Bavadin',
+        '«Esta no es mi copa de vino. Diálogos con Brisa sobre la ética del fin del mundo», de Hammond',
+        '«Cuchos, cuchillos, dagas y puñales», de Vin Venture',
+        '«Escribir es divertido si sabes cómo. Acercamiento a las expresiones escritas en el Cosmere», de Raoden (is not a normie)',
+        '«Escritura femenina para dummies», de Dalinar Kholin',
+        '«Si mueres, pierdes. Cómo sobrevivir y no caer en el intento», de Lestibournes Jedal',
+        '«Sangre o fuego. Cómo evitar desastres provocándolos», de Silencio Montane',
+        '«Lentejas y otras formas de consumir hierro», de Antillius Shezler',
+        '«Me pica nariz y eso significa movida. Cómo contrarrestar a tu contrincante investido», de Zane',
+        '«Tu mayor enemigo puedes ser tú: peligros en la aplicación de la Investidura», de Armonía',
+      ],
+    },
+  },
+  mastrell: {
+    titulo: 'MÉTODO MASTRELL',
+    parrafos: [
+      'El Método Mastrell de la Escuela Monakus busca que el alumno alcance la máxima excelencia posible, permitiendo que no solo curse las asignaturas propias de las ramas teórica y práctica, sino que su formación quede perfectamente completada al cursar todas las asignaturas que ofrece nuestro centro.',
+      'De esta manera, no solamente obtendrá el título homologado en todo el Cosmere que certifica que ha recibido una educación extensa e innovadora en este campo, sino que recibirá también el diploma a la excelencia.',
+      'Para poder lograr este hito, el alumno tendrá que haberse matriculado y superado ambos cursos de la enseñanza avanzada, o haber completado de manera satisfactoria la doble titulación en un curso escolar.',
+      'En este segundo, o tercer año de especialización, según el periodo que haya requerido para completar esas asignaturas, tendrá que aprobar las 12 asignaturas optativas que le quedan por cursar, ya que las 6 troncales y 8 optativas primeras ya tienen que estar superadas.',
+      'Debido a que la Escuela Monakus abre sus puertas este curso escolar 2023-2024, el Método Mastrell no estará disponible hasta el curso escolar 2024-2025, puesto que no se admitirán alumnos en esta modalidad de enseñanza que no hayan realizado sus estudios en nuestro centro.',
+    ],
+  },
+  matriculacion: {
+    titulo: 'MATRICULACIÓN',
+    aviso: 'Aviso 6 de septiembre 2023 - 9:35 am',
+    imagen: IMGS.matricula,
+  },
+  material: {
+    titulo: 'MATERIAL UTILIZADO',
+    parrafos: [
+      'Esta es una muestra del material que utilizaremos durante el periodo escolar. TODOS los alumnos deberán ir debidamente uniformados, tanto para sus clases teóricas como prácticas, utilizando el conjunto correspondiente según las necesidades de su horario lectivo. Podrán elegir (a su propia discreción) si utilizan falda o pantalón, así como si vestirán con prendas largas o cortas, excepto en el caso del pantalón deportivo, que por motivos de seguridad solamente tiene versión corta.',
+      'El material debe ser comprado OBLIGATORIAMENTE en el centro, para poder asegurar que es el oficial del centro educativo. Ofrecemos aquí algunas muestras de conjuntos uniformados que podrán vestir, así como el acceso a la tienda oficial de la escuela para poder adquirirlos.',
+      'Es OBLIGATORIO también que los alumnos utilicen la agenda oficial de la Escuela Monakus, así como la específica del curso escolar en el que se van a matricular (en este caso, la edición 2023-2024), así como la mochila y la botella para hidratarse. Se permitirá utilizar la botella para llevar Investidura en estado líquido, aunque se realizarán exhaustivos controles y NO SE PERMITIRÁ la utilización de material Investido para la realización de los exámenes, a no ser que el control propiamente dicho necesite que así sea. En este último caso, serán los profesores o responsables del centro los que proveerán de lo necesario.',
+    ],
+    articulos: [
+      {
+        nombre: 'AGENDA 23-24',
+        imagen: IMGS.art1,
+      },
+      {
+        nombre: 'MOCHILA MODELO SALTAMUNDOS',
+        imagen: IMGS.art2,
+      },
+      {
+        nombre: 'MOCHILA MODELO MONAKUS',
+        imagen: IMGS.art3,
+      },
+      {
+        nombre: 'BOTELLA PARA LÍQUIDOS',
+        imagen: IMGS.art4,
+      },
+      {
+        nombre: 'UNIFORME CALLE PANTALÓN',
+        imagen: IMGS.art5,
+      },
+      {
+        nombre: 'UNIFORME DEPORTE CHAQUETA',
+        imagen: IMGS.art6,
+      },
+      {
+        nombre: 'UNIFORME CALLE FALDA',
+        imagen: IMGS.art7,
+      },
+      {
+        nombre: 'UNIFORME DEPORTE SUDADERA',
+        imagen: IMGS.art8,
+      },
+      {
+        nombre: 'UNIFORME CALLE CORTO',
+        imagen: IMGS.art9,
+      },
+    ],
+    tiendaEnlace: 'https://sites.google.com/view/escuelamonakus/tienda',
+  },
+  contacto: {
+    titulo: 'CONTACTO',
+    vias: [
+      'A través de vinculacañas desde cualquier punto, con acceso desde la terminal en Luzdeplata, extensión 16',
+      'A través de correo ordinario con mensajeros de Mercantil Luzdeplata',
+      'Mediante la secretaría física del centro, en el edificio de la escuela',
+    ],
+    parrafos: [
+      'Esta es una página web realizada con mucho esfuerzo y dedicación por las Cotorras de la Copper, siempre intentando innovar para que los seguidores de las obras de Sanderson y de sus redes sociales tengan novedades y elementos graciosos con los que pasar un rato.',
+      'Nada de esto podría haberse conseguido sin el amor y dedicación de mucha otra gente que se encarga de que esas pobres cotorras mantengan la ilusión en un proyecto titánico, como es la traducción de la Coppermind al completo.',
+      'A todos vosotros, que aguantáis estas locuras y nos dais ideas para que la comunidad al completo disfrute...',
+    ],
+    gracias: '¡¡¡GRACIAS!!!',
+    secreto: 'Por pencos y pavos que seáis, esto también va para vosotros. ¡Oh! ¿Que has descubierto este mensaje secreto? Pues esto es para ti: Never gonna give you up, never gonna let you down...',
+  },
+}
